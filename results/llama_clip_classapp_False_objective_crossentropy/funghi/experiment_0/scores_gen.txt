@@ -1,0 +1,330 @@
+iteration: 0 index: Elegant Sunburst Lichen train cross-entropy: -1.639481782913208 test cross-entropy: -1.6682595014572144 train accuracy: 0.416 test accuracy: 0.31666666666666665
+iteration: 0 index: Golden-eye Lichen train cross-entropy: -1.6584358215332031 test cross-entropy: -1.6919721364974976 train accuracy: 0.39 test accuracy: 0.31666666666666665
+iteration: 0 index: slender orange-bush train cross-entropy: -1.6501898765563965 test cross-entropy: -1.6867648363113403 train accuracy: 0.388 test accuracy: 0.3
+iteration: 0 index: Golden Hair-lichen train cross-entropy: -1.6615839004516602 test cross-entropy: -1.695090651512146 train accuracy: 0.382 test accuracy: 0.3
+iteration: 0 index: Hooded Sunburst Lichen train cross-entropy: -1.6268435716629028 test cross-entropy: -1.6884195804595947 train accuracy: 0.388 test accuracy: 0.36666666666666664
+iteration: 0 index: Maritime Sunburst Lichen train cross-entropy: -1.6495246887207031 test cross-entropy: -1.6809748411178589 train accuracy: 0.406 test accuracy: 0.3333333333333333
+iteration: 1 index: Elegant Sunburst Lichen train cross-entropy: -1.6577659845352173 test cross-entropy: -1.6918377876281738 train accuracy: 0.3 test accuracy: 0.2833333333333333
+iteration: 1 index: Golden-eye Lichen train cross-entropy: -1.6595284938812256 test cross-entropy: -1.6962954998016357 train accuracy: 0.34 test accuracy: 0.3
+iteration: 1 index: slender orange-bush train cross-entropy: -1.652959942817688 test cross-entropy: -1.6898945569992065 train accuracy: 0.308 test accuracy: 0.25
+iteration: 1 index: Golden Hair-lichen train cross-entropy: -1.6487438678741455 test cross-entropy: -1.6821542978286743 train accuracy: 0.388 test accuracy: 0.3
+iteration: 1 index: Hooded Sunburst Lichen train cross-entropy: -1.6154407262802124 test cross-entropy: -1.6628409624099731 train accuracy: 0.436 test accuracy: 0.36666666666666664
+iteration: 1 index: Maritime Sunburst Lichen train cross-entropy: -1.6348742246627808 test cross-entropy: -1.6816807985305786 train accuracy: 0.432 test accuracy: 0.3
+iteration: 2 index: Elegant Sunburst Lichen train cross-entropy: -1.6083024740219116 test cross-entropy: -1.6585693359375 train accuracy: 0.446 test accuracy: 0.36666666666666664
+iteration: 2 index: Golden-eye Lichen train cross-entropy: -1.6172858476638794 test cross-entropy: -1.6641610860824585 train accuracy: 0.448 test accuracy: 0.38333333333333336
+iteration: 2 index: slender orange-bush train cross-entropy: -1.615933895111084 test cross-entropy: -1.6656110286712646 train accuracy: 0.412 test accuracy: 0.38333333333333336
+iteration: 2 index: Golden Hair-lichen train cross-entropy: -1.6282907724380493 test cross-entropy: -1.677371621131897 train accuracy: 0.434 test accuracy: 0.36666666666666664
+iteration: 2 index: Hooded Sunburst Lichen train cross-entropy: -1.621176838874817 test cross-entropy: -1.6791915893554688 train accuracy: 0.436 test accuracy: 0.36666666666666664
+iteration: 2 index: Maritime Sunburst Lichen train cross-entropy: -1.6203488111495972 test cross-entropy: -1.665718913078308 train accuracy: 0.43 test accuracy: 0.3333333333333333
+iteration: 3 index: Elegant Sunburst Lichen train cross-entropy: -1.6406313180923462 test cross-entropy: -1.6858080625534058 train accuracy: 0.404 test accuracy: 0.3333333333333333
+iteration: 3 index: Golden-eye Lichen train cross-entropy: -1.6588213443756104 test cross-entropy: -1.6870601177215576 train accuracy: 0.354 test accuracy: 0.31666666666666665
+iteration: 3 index: slender orange-bush train cross-entropy: -1.6510878801345825 test cross-entropy: -1.6918188333511353 train accuracy: 0.326 test accuracy: 0.26666666666666666
+iteration: 3 index: Golden Hair-lichen train cross-entropy: -1.651061773300171 test cross-entropy: -1.6923412084579468 train accuracy: 0.314 test accuracy: 0.25
+iteration: 3 index: Hooded Sunburst Lichen train cross-entropy: -1.6226370334625244 test cross-entropy: -1.6789612770080566 train accuracy: 0.442 test accuracy: 0.36666666666666664
+iteration: 3 index: Maritime Sunburst Lichen train cross-entropy: -1.6565461158752441 test cross-entropy: -1.6933484077453613 train accuracy: 0.39 test accuracy: 0.3333333333333333
+iteration: 4 index: Elegant Sunburst Lichen train cross-entropy: -1.612892746925354 test cross-entropy: -1.662594199180603 train accuracy: 0.408 test accuracy: 0.3333333333333333
+iteration: 4 index: Golden-eye Lichen train cross-entropy: -1.6300010681152344 test cross-entropy: -1.67057466506958 train accuracy: 0.406 test accuracy: 0.3
+iteration: 4 index: slender orange-bush train cross-entropy: -1.626165509223938 test cross-entropy: -1.664649486541748 train accuracy: 0.422 test accuracy: 0.35
+iteration: 4 index: Golden Hair-lichen train cross-entropy: -1.6343951225280762 test cross-entropy: -1.67225182056427 train accuracy: 0.482 test accuracy: 0.36666666666666664
+iteration: 4 index: Hooded Sunburst Lichen train cross-entropy: -1.6275830268859863 test cross-entropy: -1.6717993021011353 train accuracy: 0.428 test accuracy: 0.3333333333333333
+iteration: 4 index: Maritime Sunburst Lichen train cross-entropy: -1.6228559017181396 test cross-entropy: -1.668942928314209 train accuracy: 0.434 test accuracy: 0.36666666666666664
+iteration: 5 index: Elegant Sunburst Lichen train cross-entropy: -1.6073747873306274 test cross-entropy: -1.655946969985962 train accuracy: 0.44 test accuracy: 0.36666666666666664
+iteration: 5 index: Golden-eye Lichen train cross-entropy: -1.6163012981414795 test cross-entropy: -1.6610301733016968 train accuracy: 0.44 test accuracy: 0.3333333333333333
+iteration: 5 index: slender orange-bush train cross-entropy: -1.6179757118225098 test cross-entropy: -1.6663960218429565 train accuracy: 0.418 test accuracy: 0.31666666666666665
+iteration: 5 index: Golden Hair-lichen train cross-entropy: -1.638067364692688 test cross-entropy: -1.682379961013794 train accuracy: 0.418 test accuracy: 0.35
+iteration: 5 index: Hooded Sunburst Lichen train cross-entropy: -1.6149271726608276 test cross-entropy: -1.6822644472122192 train accuracy: 0.474 test accuracy: 0.38333333333333336
+iteration: 5 index: Maritime Sunburst Lichen train cross-entropy: -1.6249439716339111 test cross-entropy: -1.6701796054840088 train accuracy: 0.42 test accuracy: 0.3333333333333333
+iteration: 6 index: Elegant Sunburst Lichen train cross-entropy: -1.6151366233825684 test cross-entropy: -1.6634794473648071 train accuracy: 0.428 test accuracy: 0.35
+iteration: 6 index: Golden-eye Lichen train cross-entropy: -1.6048636436462402 test cross-entropy: -1.6492679119110107 train accuracy: 0.474 test accuracy: 0.4
+iteration: 6 index: slender orange-bush train cross-entropy: -1.6006208658218384 test cross-entropy: -1.6536847352981567 train accuracy: 0.466 test accuracy: 0.4
+iteration: 6 index: Golden Hair-lichen train cross-entropy: -1.6261292695999146 test cross-entropy: -1.6756819486618042 train accuracy: 0.444 test accuracy: 0.36666666666666664
+iteration: 6 index: Hooded Sunburst Lichen train cross-entropy: -1.6118851900100708 test cross-entropy: -1.670662760734558 train accuracy: 0.446 test accuracy: 0.36666666666666664
+iteration: 6 index: Maritime Sunburst Lichen train cross-entropy: -1.6214752197265625 test cross-entropy: -1.6657371520996094 train accuracy: 0.394 test accuracy: 0.31666666666666665
+iteration: 7 index: Elegant Sunburst Lichen train cross-entropy: -1.6127809286117554 test cross-entropy: -1.6564505100250244 train accuracy: 0.418 test accuracy: 0.36666666666666664
+iteration: 7 index: Golden-eye Lichen train cross-entropy: -1.6155309677124023 test cross-entropy: -1.6615126132965088 train accuracy: 0.422 test accuracy: 0.31666666666666665
+iteration: 7 index: slender orange-bush train cross-entropy: -1.6018829345703125 test cross-entropy: -1.6446348428726196 train accuracy: 0.448 test accuracy: 0.4
+iteration: 7 index: Golden Hair-lichen train cross-entropy: -1.6174511909484863 test cross-entropy: -1.6614623069763184 train accuracy: 0.468 test accuracy: 0.36666666666666664
+iteration: 7 index: Hooded Sunburst Lichen train cross-entropy: -1.6072825193405151 test cross-entropy: -1.6596782207489014 train accuracy: 0.474 test accuracy: 0.4
+iteration: 7 index: Maritime Sunburst Lichen train cross-entropy: -1.6086630821228027 test cross-entropy: -1.6453568935394287 train accuracy: 0.422 test accuracy: 0.36666666666666664
+iteration: 8 index: Elegant Sunburst Lichen train cross-entropy: -1.617641806602478 test cross-entropy: -1.6707916259765625 train accuracy: 0.362 test accuracy: 0.31666666666666665
+iteration: 8 index: Golden-eye Lichen train cross-entropy: -1.6103812456130981 test cross-entropy: -1.6678097248077393 train accuracy: 0.412 test accuracy: 0.2833333333333333
+iteration: 8 index: slender orange-bush train cross-entropy: -1.6096712350845337 test cross-entropy: -1.664351224899292 train accuracy: 0.412 test accuracy: 0.36666666666666664
+iteration: 8 index: Golden Hair-lichen train cross-entropy: -1.6241105794906616 test cross-entropy: -1.660330891609192 train accuracy: 0.438 test accuracy: 0.4
+iteration: 8 index: Hooded Sunburst Lichen train cross-entropy: -1.6037309169769287 test cross-entropy: -1.6700409650802612 train accuracy: 0.408 test accuracy: 0.3333333333333333
+iteration: 8 index: Maritime Sunburst Lichen train cross-entropy: -1.61473548412323 test cross-entropy: -1.6685501337051392 train accuracy: 0.416 test accuracy: 0.3
+iteration: 9 index: Elegant Sunburst Lichen train cross-entropy: -1.6081278324127197 test cross-entropy: -1.6489895582199097 train accuracy: 0.46 test accuracy: 0.38333333333333336
+iteration: 9 index: Golden-eye Lichen train cross-entropy: -1.6137282848358154 test cross-entropy: -1.6636732816696167 train accuracy: 0.402 test accuracy: 0.31666666666666665
+iteration: 9 index: slender orange-bush train cross-entropy: -1.611997127532959 test cross-entropy: -1.6620221138000488 train accuracy: 0.418 test accuracy: 0.38333333333333336
+iteration: 9 index: Golden Hair-lichen train cross-entropy: -1.6258898973464966 test cross-entropy: -1.6683158874511719 train accuracy: 0.402 test accuracy: 0.3333333333333333
+iteration: 9 index: Hooded Sunburst Lichen train cross-entropy: -1.6185307502746582 test cross-entropy: -1.67512047290802 train accuracy: 0.418 test accuracy: 0.36666666666666664
+iteration: 9 index: Maritime Sunburst Lichen train cross-entropy: -1.6210079193115234 test cross-entropy: -1.6621354818344116 train accuracy: 0.376 test accuracy: 0.3333333333333333
+iteration: 10 index: Elegant Sunburst Lichen train cross-entropy: -1.6055887937545776 test cross-entropy: -1.655989170074463 train accuracy: 0.47 test accuracy: 0.38333333333333336
+iteration: 10 index: Golden-eye Lichen train cross-entropy: -1.6153905391693115 test cross-entropy: -1.6716593503952026 train accuracy: 0.43 test accuracy: 0.36666666666666664
+iteration: 10 index: slender orange-bush train cross-entropy: -1.611238718032837 test cross-entropy: -1.6628742218017578 train accuracy: 0.44 test accuracy: 0.4
+iteration: 10 index: Golden Hair-lichen train cross-entropy: -1.6167209148406982 test cross-entropy: -1.6700718402862549 train accuracy: 0.482 test accuracy: 0.36666666666666664
+iteration: 10 index: Hooded Sunburst Lichen train cross-entropy: -1.6155339479446411 test cross-entropy: -1.6668897867202759 train accuracy: 0.468 test accuracy: 0.4
+iteration: 10 index: Maritime Sunburst Lichen train cross-entropy: -1.5967872142791748 test cross-entropy: -1.667747139930725 train accuracy: 0.45 test accuracy: 0.25
+iteration: 11 index: Elegant Sunburst Lichen train cross-entropy: -1.6031615734100342 test cross-entropy: -1.6534849405288696 train accuracy: 0.456 test accuracy: 0.4
+iteration: 11 index: Golden-eye Lichen train cross-entropy: -1.5941307544708252 test cross-entropy: -1.6427150964736938 train accuracy: 0.448 test accuracy: 0.4166666666666667
+iteration: 11 index: slender orange-bush train cross-entropy: -1.6097177267074585 test cross-entropy: -1.67022705078125 train accuracy: 0.456 test accuracy: 0.36666666666666664
+iteration: 11 index: Golden Hair-lichen train cross-entropy: -1.6032493114471436 test cross-entropy: -1.6578593254089355 train accuracy: 0.476 test accuracy: 0.4
+iteration: 11 index: Hooded Sunburst Lichen train cross-entropy: -1.6003364324569702 test cross-entropy: -1.6765096187591553 train accuracy: 0.466 test accuracy: 0.4
+iteration: 11 index: Maritime Sunburst Lichen train cross-entropy: -1.6196123361587524 test cross-entropy: -1.6552784442901611 train accuracy: 0.42 test accuracy: 0.35
+iteration: 12 index: Elegant Sunburst Lichen train cross-entropy: -1.605434536933899 test cross-entropy: -1.6452840566635132 train accuracy: 0.446 test accuracy: 0.35
+iteration: 12 index: Golden-eye Lichen train cross-entropy: -1.6155345439910889 test cross-entropy: -1.6748698949813843 train accuracy: 0.426 test accuracy: 0.3333333333333333
+iteration: 12 index: slender orange-bush train cross-entropy: -1.6081544160842896 test cross-entropy: -1.6631665229797363 train accuracy: 0.426 test accuracy: 0.36666666666666664
+iteration: 12 index: Golden Hair-lichen train cross-entropy: -1.6254820823669434 test cross-entropy: -1.684771180152893 train accuracy: 0.456 test accuracy: 0.36666666666666664
+iteration: 12 index: Hooded Sunburst Lichen train cross-entropy: -1.6122652292251587 test cross-entropy: -1.6668131351470947 train accuracy: 0.44 test accuracy: 0.4
+iteration: 12 index: Maritime Sunburst Lichen train cross-entropy: -1.608142614364624 test cross-entropy: -1.673681378364563 train accuracy: 0.452 test accuracy: 0.35
+iteration: 13 index: Elegant Sunburst Lichen train cross-entropy: -1.6159154176712036 test cross-entropy: -1.683362364768982 train accuracy: 0.408 test accuracy: 0.4166666666666667
+iteration: 13 index: Golden-eye Lichen train cross-entropy: -1.60897958278656 test cross-entropy: -1.6789523363113403 train accuracy: 0.438 test accuracy: 0.4
+iteration: 13 index: slender orange-bush train cross-entropy: -1.6077536344528198 test cross-entropy: -1.6829664707183838 train accuracy: 0.474 test accuracy: 0.38333333333333336
+iteration: 13 index: Golden Hair-lichen train cross-entropy: -1.609586477279663 test cross-entropy: -1.6851650476455688 train accuracy: 0.472 test accuracy: 0.4
+iteration: 13 index: Hooded Sunburst Lichen train cross-entropy: -1.6009694337844849 test cross-entropy: -1.6697444915771484 train accuracy: 0.466 test accuracy: 0.4
+iteration: 13 index: Maritime Sunburst Lichen train cross-entropy: -1.6051560640335083 test cross-entropy: -1.686225175857544 train accuracy: 0.456 test accuracy: 0.36666666666666664
+iteration: 14 index: Elegant Sunburst Lichen train cross-entropy: -1.6001044511795044 test cross-entropy: -1.6403707265853882 train accuracy: 0.45 test accuracy: 0.38333333333333336
+iteration: 14 index: Golden-eye Lichen train cross-entropy: -1.604352593421936 test cross-entropy: -1.6683155298233032 train accuracy: 0.408 test accuracy: 0.36666666666666664
+iteration: 14 index: slender orange-bush train cross-entropy: -1.6062400341033936 test cross-entropy: -1.6697109937667847 train accuracy: 0.392 test accuracy: 0.36666666666666664
+iteration: 14 index: Golden Hair-lichen train cross-entropy: -1.609247088432312 test cross-entropy: -1.658034086227417 train accuracy: 0.46 test accuracy: 0.4
+iteration: 14 index: Hooded Sunburst Lichen train cross-entropy: -1.5953160524368286 test cross-entropy: -1.6883364915847778 train accuracy: 0.448 test accuracy: 0.4
+iteration: 14 index: Maritime Sunburst Lichen train cross-entropy: -1.6162523031234741 test cross-entropy: -1.6772480010986328 train accuracy: 0.382 test accuracy: 0.31666666666666665
+iteration: 15 index: Elegant Sunburst Lichen train cross-entropy: -1.6034293174743652 test cross-entropy: -1.6460376977920532 train accuracy: 0.4 test accuracy: 0.4
+iteration: 15 index: Golden-eye Lichen train cross-entropy: -1.6014773845672607 test cross-entropy: -1.6975083351135254 train accuracy: 0.47 test accuracy: 0.4166666666666667
+iteration: 15 index: slender orange-bush train cross-entropy: -1.5975146293640137 test cross-entropy: -1.6946251392364502 train accuracy: 0.442 test accuracy: 0.38333333333333336
+iteration: 15 index: Golden Hair-lichen train cross-entropy: -1.6154744625091553 test cross-entropy: -1.6667543649673462 train accuracy: 0.444 test accuracy: 0.4166666666666667
+iteration: 15 index: Hooded Sunburst Lichen train cross-entropy: -1.591964602470398 test cross-entropy: -1.7120507955551147 train accuracy: 0.448 test accuracy: 0.4166666666666667
+iteration: 15 index: Maritime Sunburst Lichen train cross-entropy: -1.5955939292907715 test cross-entropy: -1.651346206665039 train accuracy: 0.466 test accuracy: 0.36666666666666664
+iteration: 16 index: Elegant Sunburst Lichen train cross-entropy: -1.596456527709961 test cross-entropy: -1.6637893915176392 train accuracy: 0.458 test accuracy: 0.26666666666666666
+iteration: 16 index: Golden-eye Lichen train cross-entropy: -1.5887259244918823 test cross-entropy: -1.6585254669189453 train accuracy: 0.438 test accuracy: 0.31666666666666665
+iteration: 16 index: slender orange-bush train cross-entropy: -1.5953444242477417 test cross-entropy: -1.6825026273727417 train accuracy: 0.47 test accuracy: 0.38333333333333336
+iteration: 16 index: Golden Hair-lichen train cross-entropy: -1.60792875289917 test cross-entropy: -1.6760584115982056 train accuracy: 0.438 test accuracy: 0.25
+iteration: 16 index: Hooded Sunburst Lichen train cross-entropy: -1.591225266456604 test cross-entropy: -1.6849422454833984 train accuracy: 0.45 test accuracy: 0.25
+iteration: 16 index: Maritime Sunburst Lichen train cross-entropy: -1.596927523612976 test cross-entropy: -1.6873375177383423 train accuracy: 0.412 test accuracy: 0.35
+iteration: 17 index: Elegant Sunburst Lichen train cross-entropy: -1.6003364324569702 test cross-entropy: -1.6765096187591553 train accuracy: 0.466 test accuracy: 0.4
+iteration: 17 index: Golden-eye Lichen train cross-entropy: -1.5995442867279053 test cross-entropy: -1.6720249652862549 train accuracy: 0.444 test accuracy: 0.38333333333333336
+iteration: 17 index: slender orange-bush train cross-entropy: -1.6022790670394897 test cross-entropy: -1.6723936796188354 train accuracy: 0.442 test accuracy: 0.4
+iteration: 17 index: Golden Hair-lichen train cross-entropy: -1.6183680295944214 test cross-entropy: -1.6967734098434448 train accuracy: 0.468 test accuracy: 0.4
+iteration: 17 index: Hooded Sunburst Lichen train cross-entropy: -1.6063162088394165 test cross-entropy: -1.663239598274231 train accuracy: 0.466 test accuracy: 0.4
+iteration: 17 index: Maritime Sunburst Lichen train cross-entropy: -1.6163603067398071 test cross-entropy: -1.6538208723068237 train accuracy: 0.426 test accuracy: 0.36666666666666664
+iteration: 18 index: Elegant Sunburst Lichen train cross-entropy: -1.5952452421188354 test cross-entropy: -1.6423269510269165 train accuracy: 0.444 test accuracy: 0.4
+iteration: 18 index: Golden-eye Lichen train cross-entropy: -1.6032627820968628 test cross-entropy: -1.6486612558364868 train accuracy: 0.436 test accuracy: 0.4
+iteration: 18 index: slender orange-bush train cross-entropy: -1.5971182584762573 test cross-entropy: -1.6484555006027222 train accuracy: 0.476 test accuracy: 0.45
+iteration: 18 index: Golden Hair-lichen train cross-entropy: -1.5877293348312378 test cross-entropy: -1.6361149549484253 train accuracy: 0.488 test accuracy: 0.43333333333333335
+iteration: 18 index: Hooded Sunburst Lichen train cross-entropy: -1.595505952835083 test cross-entropy: -1.6567566394805908 train accuracy: 0.448 test accuracy: 0.4166666666666667
+iteration: 18 index: Maritime Sunburst Lichen train cross-entropy: -1.6031988859176636 test cross-entropy: -1.6479755640029907 train accuracy: 0.418 test accuracy: 0.38333333333333336
+iteration: 19 index: Elegant Sunburst Lichen train cross-entropy: -1.605940818786621 test cross-entropy: -1.6618711948394775 train accuracy: 0.456 test accuracy: 0.36666666666666664
+iteration: 19 index: Golden-eye Lichen train cross-entropy: -1.6085937023162842 test cross-entropy: -1.6641827821731567 train accuracy: 0.434 test accuracy: 0.35
+iteration: 19 index: slender orange-bush train cross-entropy: -1.6115621328353882 test cross-entropy: -1.6518958806991577 train accuracy: 0.414 test accuracy: 0.35
+iteration: 19 index: Golden Hair-lichen train cross-entropy: -1.615298867225647 test cross-entropy: -1.6644484996795654 train accuracy: 0.466 test accuracy: 0.4
+iteration: 19 index: Hooded Sunburst Lichen train cross-entropy: -1.600730061531067 test cross-entropy: -1.6795333623886108 train accuracy: 0.476 test accuracy: 0.4
+iteration: 19 index: Maritime Sunburst Lichen train cross-entropy: -1.6067557334899902 test cross-entropy: -1.6491957902908325 train accuracy: 0.424 test accuracy: 0.36666666666666664
+iteration: 20 index: Elegant Sunburst Lichen train cross-entropy: -1.5863964557647705 test cross-entropy: -1.6301968097686768 train accuracy: 0.456 test accuracy: 0.43333333333333335
+iteration: 20 index: Golden-eye Lichen train cross-entropy: -1.5947558879852295 test cross-entropy: -1.6556739807128906 train accuracy: 0.444 test accuracy: 0.3333333333333333
+iteration: 20 index: slender orange-bush train cross-entropy: -1.5927828550338745 test cross-entropy: -1.6533409357070923 train accuracy: 0.456 test accuracy: 0.26666666666666666
+iteration: 20 index: Golden Hair-lichen train cross-entropy: -1.6001858711242676 test cross-entropy: -1.6452140808105469 train accuracy: 0.48 test accuracy: 0.4166666666666667
+iteration: 20 index: Hooded Sunburst Lichen train cross-entropy: -1.5957410335540771 test cross-entropy: -1.650592565536499 train accuracy: 0.448 test accuracy: 0.4166666666666667
+iteration: 20 index: Maritime Sunburst Lichen train cross-entropy: -1.6021546125411987 test cross-entropy: -1.64887273311615 train accuracy: 0.42 test accuracy: 0.4
+iteration: 21 index: Elegant Sunburst Lichen train cross-entropy: -1.6028996706008911 test cross-entropy: -1.6713253259658813 train accuracy: 0.438 test accuracy: 0.23333333333333334
+iteration: 21 index: Golden-eye Lichen train cross-entropy: -1.5979163646697998 test cross-entropy: -1.657497525215149 train accuracy: 0.428 test accuracy: 0.3
+iteration: 21 index: slender orange-bush train cross-entropy: -1.5937896966934204 test cross-entropy: -1.6894220113754272 train accuracy: 0.462 test accuracy: 0.35
+iteration: 21 index: Golden Hair-lichen train cross-entropy: -1.6144002676010132 test cross-entropy: -1.6836985349655151 train accuracy: 0.45 test accuracy: 0.26666666666666666
+iteration: 21 index: Hooded Sunburst Lichen train cross-entropy: -1.593329906463623 test cross-entropy: -1.6801598072052002 train accuracy: 0.458 test accuracy: 0.26666666666666666
+iteration: 21 index: Maritime Sunburst Lichen train cross-entropy: -1.601053237915039 test cross-entropy: -1.6968780755996704 train accuracy: 0.432 test accuracy: 0.35
+iteration: 22 index: Elegant Sunburst Lichen train cross-entropy: -1.5937614440917969 test cross-entropy: -1.6865159273147583 train accuracy: 0.426 test accuracy: 0.25
+iteration: 22 index: Golden-eye Lichen train cross-entropy: -1.5884206295013428 test cross-entropy: -1.6752585172653198 train accuracy: 0.444 test accuracy: 0.2833333333333333
+iteration: 22 index: slender orange-bush train cross-entropy: -1.5867546796798706 test cross-entropy: -1.6652873754501343 train accuracy: 0.456 test accuracy: 0.38333333333333336
+iteration: 22 index: Golden Hair-lichen train cross-entropy: -1.6101748943328857 test cross-entropy: -1.693450927734375 train accuracy: 0.452 test accuracy: 0.26666666666666666
+iteration: 22 index: Hooded Sunburst Lichen train cross-entropy: -1.5892651081085205 test cross-entropy: -1.6794644594192505 train accuracy: 0.458 test accuracy: 0.26666666666666666
+iteration: 22 index: Maritime Sunburst Lichen train cross-entropy: -1.6016130447387695 test cross-entropy: -1.6928794384002686 train accuracy: 0.402 test accuracy: 0.3333333333333333
+iteration: 23 index: Elegant Sunburst Lichen train cross-entropy: -1.5924123525619507 test cross-entropy: -1.6513252258300781 train accuracy: 0.42 test accuracy: 0.3
+iteration: 23 index: Golden-eye Lichen train cross-entropy: -1.5980396270751953 test cross-entropy: -1.6761599779129028 train accuracy: 0.414 test accuracy: 0.35
+iteration: 23 index: slender orange-bush train cross-entropy: -1.58353590965271 test cross-entropy: -1.6580387353897095 train accuracy: 0.422 test accuracy: 0.26666666666666666
+iteration: 23 index: Golden Hair-lichen train cross-entropy: -1.5988092422485352 test cross-entropy: -1.6670145988464355 train accuracy: 0.428 test accuracy: 0.31666666666666665
+iteration: 23 index: Hooded Sunburst Lichen train cross-entropy: -1.588584065437317 test cross-entropy: -1.6781076192855835 train accuracy: 0.438 test accuracy: 0.31666666666666665
+iteration: 23 index: Maritime Sunburst Lichen train cross-entropy: -1.603304386138916 test cross-entropy: -1.6639622449874878 train accuracy: 0.378 test accuracy: 0.26666666666666666
+iteration: 24 index: Elegant Sunburst Lichen train cross-entropy: -1.5848798751831055 test cross-entropy: -1.6282709836959839 train accuracy: 0.496 test accuracy: 0.4
+iteration: 24 index: Golden-eye Lichen train cross-entropy: -1.5801390409469604 test cross-entropy: -1.6398053169250488 train accuracy: 0.478 test accuracy: 0.38333333333333336
+iteration: 24 index: slender orange-bush train cross-entropy: -1.5910238027572632 test cross-entropy: -1.6873613595962524 train accuracy: 0.42 test accuracy: 0.3333333333333333
+iteration: 24 index: Golden Hair-lichen train cross-entropy: -1.6140563488006592 test cross-entropy: -1.6756149530410767 train accuracy: 0.408 test accuracy: 0.3
+iteration: 24 index: Hooded Sunburst Lichen train cross-entropy: -1.5853585004806519 test cross-entropy: -1.6632760763168335 train accuracy: 0.488 test accuracy: 0.43333333333333335
+iteration: 24 index: Maritime Sunburst Lichen train cross-entropy: -1.5965405702590942 test cross-entropy: -1.6424967050552368 train accuracy: 0.458 test accuracy: 0.38333333333333336
+iteration: 25 index: Elegant Sunburst Lichen train cross-entropy: -1.6028317213058472 test cross-entropy: -1.662199854850769 train accuracy: 0.436 test accuracy: 0.26666666666666666
+iteration: 25 index: Golden-eye Lichen train cross-entropy: -1.5946012735366821 test cross-entropy: -1.646166443824768 train accuracy: 0.448 test accuracy: 0.31666666666666665
+iteration: 25 index: slender orange-bush train cross-entropy: -1.5919804573059082 test cross-entropy: -1.650902509689331 train accuracy: 0.452 test accuracy: 0.25
+iteration: 25 index: Golden Hair-lichen train cross-entropy: -1.6028774976730347 test cross-entropy: -1.6625759601593018 train accuracy: 0.456 test accuracy: 0.26666666666666666
+iteration: 25 index: Hooded Sunburst Lichen train cross-entropy: -1.5923621654510498 test cross-entropy: -1.66436767578125 train accuracy: 0.456 test accuracy: 0.26666666666666666
+iteration: 25 index: Maritime Sunburst Lichen train cross-entropy: -1.5968151092529297 test cross-entropy: -1.645281434059143 train accuracy: 0.438 test accuracy: 0.38333333333333336
+iteration: 26 index: Elegant Sunburst Lichen train cross-entropy: -1.5847636461257935 test cross-entropy: -1.630631685256958 train accuracy: 0.472 test accuracy: 0.4
+iteration: 26 index: Golden-eye Lichen train cross-entropy: -1.5837589502334595 test cross-entropy: -1.6417385339736938 train accuracy: 0.522 test accuracy: 0.4166666666666667
+iteration: 26 index: slender orange-bush train cross-entropy: -1.5917699337005615 test cross-entropy: -1.635125994682312 train accuracy: 0.552 test accuracy: 0.5333333333333333
+iteration: 26 index: Golden Hair-lichen train cross-entropy: -1.605718731880188 test cross-entropy: -1.6638439893722534 train accuracy: 0.454 test accuracy: 0.26666666666666666
+iteration: 26 index: Hooded Sunburst Lichen train cross-entropy: -1.5864187479019165 test cross-entropy: -1.640044093132019 train accuracy: 0.488 test accuracy: 0.43333333333333335
+iteration: 26 index: Maritime Sunburst Lichen train cross-entropy: -1.595296859741211 test cross-entropy: -1.644335389137268 train accuracy: 0.466 test accuracy: 0.36666666666666664
+iteration: 27 index: Elegant Sunburst Lichen train cross-entropy: -1.5884697437286377 test cross-entropy: -1.6364384889602661 train accuracy: 0.442 test accuracy: 0.4
+iteration: 27 index: Golden-eye Lichen train cross-entropy: -1.585267186164856 test cross-entropy: -1.6534086465835571 train accuracy: 0.45 test accuracy: 0.4
+iteration: 27 index: slender orange-bush train cross-entropy: -1.5861237049102783 test cross-entropy: -1.6601845026016235 train accuracy: 0.46 test accuracy: 0.36666666666666664
+iteration: 27 index: Golden Hair-lichen train cross-entropy: -1.5980254411697388 test cross-entropy: -1.6783359050750732 train accuracy: 0.454 test accuracy: 0.38333333333333336
+iteration: 27 index: Hooded Sunburst Lichen train cross-entropy: -1.5801297426223755 test cross-entropy: -1.6457167863845825 train accuracy: 0.472 test accuracy: 0.4
+iteration: 27 index: Maritime Sunburst Lichen train cross-entropy: -1.5846432447433472 test cross-entropy: -1.6321836709976196 train accuracy: 0.454 test accuracy: 0.4
+iteration: 28 index: Elegant Sunburst Lichen train cross-entropy: -1.5828258991241455 test cross-entropy: -1.6305471658706665 train accuracy: 0.488 test accuracy: 0.4166666666666667
+iteration: 28 index: Golden-eye Lichen train cross-entropy: -1.5838754177093506 test cross-entropy: -1.6303273439407349 train accuracy: 0.482 test accuracy: 0.4
+iteration: 28 index: slender orange-bush train cross-entropy: -1.593379020690918 test cross-entropy: -1.6809407472610474 train accuracy: 0.466 test accuracy: 0.25
+iteration: 28 index: Golden Hair-lichen train cross-entropy: -1.5975804328918457 test cross-entropy: -1.6472299098968506 train accuracy: 0.436 test accuracy: 0.38333333333333336
+iteration: 28 index: Hooded Sunburst Lichen train cross-entropy: -1.5857802629470825 test cross-entropy: -1.653143286705017 train accuracy: 0.472 test accuracy: 0.4
+iteration: 28 index: Maritime Sunburst Lichen train cross-entropy: -1.5916898250579834 test cross-entropy: -1.634658694267273 train accuracy: 0.464 test accuracy: 0.38333333333333336
+iteration: 29 index: Elegant Sunburst Lichen train cross-entropy: -1.5735033750534058 test cross-entropy: -1.6313616037368774 train accuracy: 0.484 test accuracy: 0.36666666666666664
+iteration: 29 index: Golden-eye Lichen train cross-entropy: -1.5862106084823608 test cross-entropy: -1.657658338546753 train accuracy: 0.458 test accuracy: 0.38333333333333336
+iteration: 29 index: slender orange-bush train cross-entropy: -1.5843204259872437 test cross-entropy: -1.6465840339660645 train accuracy: 0.488 test accuracy: 0.38333333333333336
+iteration: 29 index: Golden Hair-lichen train cross-entropy: -1.589545488357544 test cross-entropy: -1.6640496253967285 train accuracy: 0.462 test accuracy: 0.2833333333333333
+iteration: 29 index: Hooded Sunburst Lichen train cross-entropy: -1.5760945081710815 test cross-entropy: -1.6660412549972534 train accuracy: 0.478 test accuracy: 0.38333333333333336
+iteration: 29 index: Maritime Sunburst Lichen train cross-entropy: -1.5871493816375732 test cross-entropy: -1.645107626914978 train accuracy: 0.47 test accuracy: 0.31666666666666665
+iteration: 30 index: Elegant Sunburst Lichen train cross-entropy: -1.5860719680786133 test cross-entropy: -1.6345807313919067 train accuracy: 0.456 test accuracy: 0.4
+iteration: 30 index: Golden-eye Lichen train cross-entropy: -1.5887820720672607 test cross-entropy: -1.6389350891113281 train accuracy: 0.454 test accuracy: 0.4
+iteration: 30 index: slender orange-bush train cross-entropy: -1.5859801769256592 test cross-entropy: -1.68281090259552 train accuracy: 0.45 test accuracy: 0.26666666666666666
+iteration: 30 index: Golden Hair-lichen train cross-entropy: -1.6062692403793335 test cross-entropy: -1.7015897035598755 train accuracy: 0.444 test accuracy: 0.25
+iteration: 30 index: Hooded Sunburst Lichen train cross-entropy: -1.5838018655776978 test cross-entropy: -1.6461433172225952 train accuracy: 0.454 test accuracy: 0.4
+iteration: 30 index: Maritime Sunburst Lichen train cross-entropy: -1.5937273502349854 test cross-entropy: -1.6378649473190308 train accuracy: 0.43 test accuracy: 0.36666666666666664
+iteration: 31 index: Elegant Sunburst Lichen train cross-entropy: -1.5774837732315063 test cross-entropy: -1.6452771425247192 train accuracy: 0.504 test accuracy: 0.4
+iteration: 31 index: Golden-eye Lichen train cross-entropy: -1.600843071937561 test cross-entropy: -1.6617672443389893 train accuracy: 0.464 test accuracy: 0.4
+iteration: 31 index: slender orange-bush train cross-entropy: -1.57966148853302 test cross-entropy: -1.6483745574951172 train accuracy: 0.422 test accuracy: 0.2833333333333333
+iteration: 31 index: Golden Hair-lichen train cross-entropy: -1.595291256904602 test cross-entropy: -1.638383150100708 train accuracy: 0.474 test accuracy: 0.4
+iteration: 31 index: Hooded Sunburst Lichen train cross-entropy: -1.5854876041412354 test cross-entropy: -1.6478615999221802 train accuracy: 0.472 test accuracy: 0.4
+iteration: 31 index: Maritime Sunburst Lichen train cross-entropy: -1.580901026725769 test cross-entropy: -1.646169662475586 train accuracy: 0.438 test accuracy: 0.38333333333333336
+iteration: 32 index: Elegant Sunburst Lichen train cross-entropy: -1.5656416416168213 test cross-entropy: -1.6272072792053223 train accuracy: 0.472 test accuracy: 0.38333333333333336
+iteration: 32 index: Golden-eye Lichen train cross-entropy: -1.58146333694458 test cross-entropy: -1.6496015787124634 train accuracy: 0.5 test accuracy: 0.4
+iteration: 32 index: slender orange-bush train cross-entropy: -1.5703752040863037 test cross-entropy: -1.626015305519104 train accuracy: 0.506 test accuracy: 0.36666666666666664
+iteration: 32 index: Golden Hair-lichen train cross-entropy: -1.583593726158142 test cross-entropy: -1.636841893196106 train accuracy: 0.472 test accuracy: 0.35
+iteration: 32 index: Hooded Sunburst Lichen train cross-entropy: -1.566225528717041 test cross-entropy: -1.641800045967102 train accuracy: 0.484 test accuracy: 0.36666666666666664
+iteration: 32 index: Maritime Sunburst Lichen train cross-entropy: -1.5950736999511719 test cross-entropy: -1.6414965391159058 train accuracy: 0.428 test accuracy: 0.31666666666666665
+iteration: 33 index: Elegant Sunburst Lichen train cross-entropy: -1.5872547626495361 test cross-entropy: -1.659963607788086 train accuracy: 0.414 test accuracy: 0.25
+iteration: 33 index: Golden-eye Lichen train cross-entropy: -1.5870649814605713 test cross-entropy: -1.6595758199691772 train accuracy: 0.458 test accuracy: 0.38333333333333336
+iteration: 33 index: slender orange-bush train cross-entropy: -1.5827313661575317 test cross-entropy: -1.6515624523162842 train accuracy: 0.42 test accuracy: 0.31666666666666665
+iteration: 33 index: Golden Hair-lichen train cross-entropy: -1.5933948755264282 test cross-entropy: -1.6616425514221191 train accuracy: 0.418 test accuracy: 0.26666666666666666
+iteration: 33 index: Hooded Sunburst Lichen train cross-entropy: -1.5751944780349731 test cross-entropy: -1.716855764389038 train accuracy: 0.422 test accuracy: 0.26666666666666666
+iteration: 33 index: Maritime Sunburst Lichen train cross-entropy: -1.595342755317688 test cross-entropy: -1.6559785604476929 train accuracy: 0.396 test accuracy: 0.26666666666666666
+iteration: 34 index: Elegant Sunburst Lichen train cross-entropy: -1.5650485754013062 test cross-entropy: -1.6465928554534912 train accuracy: 0.44 test accuracy: 0.35
+iteration: 34 index: Golden-eye Lichen train cross-entropy: -1.569606900215149 test cross-entropy: -1.63860023021698 train accuracy: 0.5 test accuracy: 0.36666666666666664
+iteration: 34 index: slender orange-bush train cross-entropy: -1.5638384819030762 test cross-entropy: -1.635911226272583 train accuracy: 0.52 test accuracy: 0.38333333333333336
+iteration: 34 index: Golden Hair-lichen train cross-entropy: -1.5786858797073364 test cross-entropy: -1.657461404800415 train accuracy: 0.448 test accuracy: 0.35
+iteration: 34 index: Hooded Sunburst Lichen train cross-entropy: -1.5693886280059814 test cross-entropy: -1.658953070640564 train accuracy: 0.484 test accuracy: 0.36666666666666664
+iteration: 34 index: Maritime Sunburst Lichen train cross-entropy: -1.5797147750854492 test cross-entropy: -1.6513760089874268 train accuracy: 0.426 test accuracy: 0.31666666666666665
+iteration: 35 index: Elegant Sunburst Lichen train cross-entropy: -1.58467698097229 test cross-entropy: -1.6506330966949463 train accuracy: 0.432 test accuracy: 0.4
+iteration: 35 index: Golden-eye Lichen train cross-entropy: -1.5755349397659302 test cross-entropy: -1.6482429504394531 train accuracy: 0.466 test accuracy: 0.4166666666666667
+iteration: 35 index: slender orange-bush train cross-entropy: -1.583952784538269 test cross-entropy: -1.6686705350875854 train accuracy: 0.436 test accuracy: 0.2833333333333333
+iteration: 35 index: Golden Hair-lichen train cross-entropy: -1.5878859758377075 test cross-entropy: -1.6627695560455322 train accuracy: 0.45 test accuracy: 0.2833333333333333
+iteration: 35 index: Hooded Sunburst Lichen train cross-entropy: -1.585585355758667 test cross-entropy: -1.6782104969024658 train accuracy: 0.438 test accuracy: 0.38333333333333336
+iteration: 35 index: Maritime Sunburst Lichen train cross-entropy: -1.5801297426223755 test cross-entropy: -1.6457167863845825 train accuracy: 0.472 test accuracy: 0.4
+iteration: 36 index: Elegant Sunburst Lichen train cross-entropy: -1.5714523792266846 test cross-entropy: -1.7021994590759277 train accuracy: 0.416 test accuracy: 0.3
+iteration: 36 index: Golden-eye Lichen train cross-entropy: -1.5884747505187988 test cross-entropy: -1.723523736000061 train accuracy: 0.43 test accuracy: 0.3
+iteration: 36 index: slender orange-bush train cross-entropy: -1.5746235847473145 test cross-entropy: -1.7110515832901 train accuracy: 0.418 test accuracy: 0.31666666666666665
+iteration: 36 index: Golden Hair-lichen train cross-entropy: -1.5813872814178467 test cross-entropy: -1.7279689311981201 train accuracy: 0.414 test accuracy: 0.26666666666666666
+iteration: 36 index: Hooded Sunburst Lichen train cross-entropy: -1.5788410902023315 test cross-entropy: -1.684711217880249 train accuracy: 0.422 test accuracy: 0.26666666666666666
+iteration: 36 index: Maritime Sunburst Lichen train cross-entropy: -1.5796008110046387 test cross-entropy: -1.7092554569244385 train accuracy: 0.39 test accuracy: 0.26666666666666666
+iteration: 37 index: Elegant Sunburst Lichen train cross-entropy: -1.572318434715271 test cross-entropy: -1.6540552377700806 train accuracy: 0.422 test accuracy: 0.31666666666666665
+iteration: 37 index: Golden-eye Lichen train cross-entropy: -1.5643596649169922 test cross-entropy: -1.6513537168502808 train accuracy: 0.44 test accuracy: 0.35
+iteration: 37 index: slender orange-bush train cross-entropy: -1.564960241317749 test cross-entropy: -1.6421778202056885 train accuracy: 0.46 test accuracy: 0.35
+iteration: 37 index: Golden Hair-lichen train cross-entropy: -1.582800269126892 test cross-entropy: -1.6667035818099976 train accuracy: 0.398 test accuracy: 0.3333333333333333
+iteration: 37 index: Hooded Sunburst Lichen train cross-entropy: -1.567527413368225 test cross-entropy: -1.658669114112854 train accuracy: 0.44 test accuracy: 0.35
+iteration: 37 index: Maritime Sunburst Lichen train cross-entropy: -1.5695891380310059 test cross-entropy: -1.648913860321045 train accuracy: 0.434 test accuracy: 0.3
+iteration: 38 index: Elegant Sunburst Lichen train cross-entropy: -1.587199091911316 test cross-entropy: -1.6505205631256104 train accuracy: 0.41 test accuracy: 0.26666666666666666
+iteration: 38 index: Golden-eye Lichen train cross-entropy: -1.5933414697647095 test cross-entropy: -1.6788923740386963 train accuracy: 0.434 test accuracy: 0.31666666666666665
+iteration: 38 index: slender orange-bush train cross-entropy: -1.5803321599960327 test cross-entropy: -1.6521316766738892 train accuracy: 0.442 test accuracy: 0.36666666666666664
+iteration: 38 index: Golden Hair-lichen train cross-entropy: -1.6060538291931152 test cross-entropy: -1.6779407262802124 train accuracy: 0.406 test accuracy: 0.26666666666666666
+iteration: 38 index: Hooded Sunburst Lichen train cross-entropy: -1.5785526037216187 test cross-entropy: -1.6866090297698975 train accuracy: 0.422 test accuracy: 0.26666666666666666
+iteration: 38 index: Maritime Sunburst Lichen train cross-entropy: -1.597193717956543 test cross-entropy: -1.6648451089859009 train accuracy: 0.396 test accuracy: 0.23333333333333334
+iteration: 39 index: Elegant Sunburst Lichen train cross-entropy: -1.5818568468093872 test cross-entropy: -1.6474947929382324 train accuracy: 0.474 test accuracy: 0.38333333333333336
+iteration: 39 index: Golden-eye Lichen train cross-entropy: -1.5873457193374634 test cross-entropy: -1.6680997610092163 train accuracy: 0.444 test accuracy: 0.2833333333333333
+iteration: 39 index: slender orange-bush train cross-entropy: -1.5819768905639648 test cross-entropy: -1.646777868270874 train accuracy: 0.526 test accuracy: 0.4
+iteration: 39 index: Golden Hair-lichen train cross-entropy: -1.6017006635665894 test cross-entropy: -1.6807971000671387 train accuracy: 0.456 test accuracy: 0.36666666666666664
+iteration: 39 index: Hooded Sunburst Lichen train cross-entropy: -1.5804325342178345 test cross-entropy: -1.6474989652633667 train accuracy: 0.5 test accuracy: 0.4
+iteration: 39 index: Maritime Sunburst Lichen train cross-entropy: -1.5860661268234253 test cross-entropy: -1.6508662700653076 train accuracy: 0.476 test accuracy: 0.4
+iteration: 40 index: Elegant Sunburst Lichen train cross-entropy: -1.591849446296692 test cross-entropy: -1.6857131719589233 train accuracy: 0.438 test accuracy: 0.31666666666666665
+iteration: 40 index: Golden-eye Lichen train cross-entropy: -1.59440279006958 test cross-entropy: -1.6789699792861938 train accuracy: 0.412 test accuracy: 0.3333333333333333
+iteration: 40 index: slender orange-bush train cross-entropy: -1.5926181077957153 test cross-entropy: -1.6865556240081787 train accuracy: 0.428 test accuracy: 0.3333333333333333
+iteration: 40 index: Golden Hair-lichen train cross-entropy: -1.6075652837753296 test cross-entropy: -1.7020188570022583 train accuracy: 0.422 test accuracy: 0.3333333333333333
+iteration: 40 index: Hooded Sunburst Lichen train cross-entropy: -1.5899237394332886 test cross-entropy: -1.700188159942627 train accuracy: 0.42 test accuracy: 0.3333333333333333
+iteration: 40 index: Maritime Sunburst Lichen train cross-entropy: -1.5994882583618164 test cross-entropy: -1.649218201637268 train accuracy: 0.418 test accuracy: 0.36666666666666664
+iteration: 41 index: Elegant Sunburst Lichen train cross-entropy: -1.572959542274475 test cross-entropy: -1.6315747499465942 train accuracy: 0.51 test accuracy: 0.4166666666666667
+iteration: 41 index: Golden-eye Lichen train cross-entropy: -1.5760704278945923 test cross-entropy: -1.6293107271194458 train accuracy: 0.496 test accuracy: 0.43333333333333335
+iteration: 41 index: slender orange-bush train cross-entropy: -1.5901743173599243 test cross-entropy: -1.6810929775238037 train accuracy: 0.436 test accuracy: 0.3
+iteration: 41 index: Golden Hair-lichen train cross-entropy: -1.5913007259368896 test cross-entropy: -1.6720668077468872 train accuracy: 0.412 test accuracy: 0.26666666666666666
+iteration: 41 index: Hooded Sunburst Lichen train cross-entropy: -1.5780185461044312 test cross-entropy: -1.6781139373779297 train accuracy: 0.522 test accuracy: 0.4166666666666667
+iteration: 41 index: Maritime Sunburst Lichen train cross-entropy: -1.5862163305282593 test cross-entropy: -1.649349570274353 train accuracy: 0.514 test accuracy: 0.4
+iteration: 42 index: Elegant Sunburst Lichen train cross-entropy: -1.5761172771453857 test cross-entropy: -1.7213908433914185 train accuracy: 0.41 test accuracy: 0.26666666666666666
+iteration: 42 index: Golden-eye Lichen train cross-entropy: -1.5960731506347656 test cross-entropy: -1.64475679397583 train accuracy: 0.442 test accuracy: 0.38333333333333336
+iteration: 42 index: slender orange-bush train cross-entropy: -1.5912625789642334 test cross-entropy: -1.7301257848739624 train accuracy: 0.422 test accuracy: 0.31666666666666665
+iteration: 42 index: Golden Hair-lichen train cross-entropy: -1.5941741466522217 test cross-entropy: -1.7339683771133423 train accuracy: 0.416 test accuracy: 0.26666666666666666
+iteration: 42 index: Hooded Sunburst Lichen train cross-entropy: -1.583404779434204 test cross-entropy: -1.700221300125122 train accuracy: 0.414 test accuracy: 0.26666666666666666
+iteration: 42 index: Maritime Sunburst Lichen train cross-entropy: -1.5937000513076782 test cross-entropy: -1.7229329347610474 train accuracy: 0.364 test accuracy: 0.26666666666666666
+iteration: 43 index: Elegant Sunburst Lichen train cross-entropy: -1.5817614793777466 test cross-entropy: -1.6276541948318481 train accuracy: 0.468 test accuracy: 0.4
+iteration: 43 index: Golden-eye Lichen train cross-entropy: -1.599623203277588 test cross-entropy: -1.6467314958572388 train accuracy: 0.462 test accuracy: 0.38333333333333336
+iteration: 43 index: slender orange-bush train cross-entropy: -1.585403323173523 test cross-entropy: -1.6797294616699219 train accuracy: 0.444 test accuracy: 0.26666666666666666
+iteration: 43 index: Golden Hair-lichen train cross-entropy: -1.5941331386566162 test cross-entropy: -1.6922003030776978 train accuracy: 0.424 test accuracy: 0.3333333333333333
+iteration: 43 index: Hooded Sunburst Lichen train cross-entropy: -1.58103346824646 test cross-entropy: -1.6518442630767822 train accuracy: 0.472 test accuracy: 0.4
+iteration: 43 index: Maritime Sunburst Lichen train cross-entropy: -1.5914487838745117 test cross-entropy: -1.635655164718628 train accuracy: 0.45 test accuracy: 0.38333333333333336
+iteration: 44 index: Elegant Sunburst Lichen train cross-entropy: -1.5963038206100464 test cross-entropy: -1.6782461404800415 train accuracy: 0.382 test accuracy: 0.25
+iteration: 44 index: Golden-eye Lichen train cross-entropy: -1.5843030214309692 test cross-entropy: -1.6538546085357666 train accuracy: 0.492 test accuracy: 0.4
+iteration: 44 index: slender orange-bush train cross-entropy: -1.5936014652252197 test cross-entropy: -1.6572763919830322 train accuracy: 0.468 test accuracy: 0.3333333333333333
+iteration: 44 index: Golden Hair-lichen train cross-entropy: -1.6056056022644043 test cross-entropy: -1.6914846897125244 train accuracy: 0.436 test accuracy: 0.26666666666666666
+iteration: 44 index: Hooded Sunburst Lichen train cross-entropy: -1.587382435798645 test cross-entropy: -1.6764553785324097 train accuracy: 0.444 test accuracy: 0.2833333333333333
+iteration: 44 index: Maritime Sunburst Lichen train cross-entropy: -1.5887376070022583 test cross-entropy: -1.67654550075531 train accuracy: 0.44 test accuracy: 0.21666666666666667
+iteration: 45 index: Elegant Sunburst Lichen train cross-entropy: -1.5915420055389404 test cross-entropy: -1.6687617301940918 train accuracy: 0.384 test accuracy: 0.26666666666666666
+iteration: 45 index: Golden-eye Lichen train cross-entropy: -1.5806032419204712 test cross-entropy: -1.648328185081482 train accuracy: 0.506 test accuracy: 0.4166666666666667
+iteration: 45 index: slender orange-bush train cross-entropy: -1.584276556968689 test cross-entropy: -1.6343226432800293 train accuracy: 0.414 test accuracy: 0.3333333333333333
+iteration: 45 index: Golden Hair-lichen train cross-entropy: -1.602842092514038 test cross-entropy: -1.6664774417877197 train accuracy: 0.402 test accuracy: 0.26666666666666666
+iteration: 45 index: Hooded Sunburst Lichen train cross-entropy: -1.5819592475891113 test cross-entropy: -1.670858383178711 train accuracy: 0.41 test accuracy: 0.26666666666666666
+iteration: 45 index: Maritime Sunburst Lichen train cross-entropy: -1.596190094947815 test cross-entropy: -1.6632606983184814 train accuracy: 0.404 test accuracy: 0.25
+iteration: 46 index: Elegant Sunburst Lichen train cross-entropy: -1.575753092765808 test cross-entropy: -1.6506688594818115 train accuracy: 0.456 test accuracy: 0.4166666666666667
+iteration: 46 index: Golden-eye Lichen train cross-entropy: -1.5748050212860107 test cross-entropy: -1.6479698419570923 train accuracy: 0.526 test accuracy: 0.4166666666666667
+iteration: 46 index: slender orange-bush train cross-entropy: -1.5842922925949097 test cross-entropy: -1.6500595808029175 train accuracy: 0.438 test accuracy: 0.36666666666666664
+iteration: 46 index: Golden Hair-lichen train cross-entropy: -1.5930804014205933 test cross-entropy: -1.6685563325881958 train accuracy: 0.42 test accuracy: 0.4
+iteration: 46 index: Hooded Sunburst Lichen train cross-entropy: -1.5737111568450928 test cross-entropy: -1.6499239206314087 train accuracy: 0.466 test accuracy: 0.4166666666666667
+iteration: 46 index: Maritime Sunburst Lichen train cross-entropy: -1.5820316076278687 test cross-entropy: -1.6608017683029175 train accuracy: 0.472 test accuracy: 0.4
+iteration: 47 index: Elegant Sunburst Lichen train cross-entropy: -1.572959542274475 test cross-entropy: -1.6315747499465942 train accuracy: 0.51 test accuracy: 0.4166666666666667
+iteration: 47 index: Golden-eye Lichen train cross-entropy: -1.5751762390136719 test cross-entropy: -1.628491997718811 train accuracy: 0.496 test accuracy: 0.4
+iteration: 47 index: slender orange-bush train cross-entropy: -1.580387830734253 test cross-entropy: -1.7149285078048706 train accuracy: 0.404 test accuracy: 0.25
+iteration: 47 index: Golden Hair-lichen train cross-entropy: -1.5834181308746338 test cross-entropy: -1.7249478101730347 train accuracy: 0.414 test accuracy: 0.26666666666666666
+iteration: 47 index: Hooded Sunburst Lichen train cross-entropy: -1.5699342489242554 test cross-entropy: -1.6498334407806396 train accuracy: 0.51 test accuracy: 0.4166666666666667
+iteration: 47 index: Maritime Sunburst Lichen train cross-entropy: -1.579756498336792 test cross-entropy: -1.6386988162994385 train accuracy: 0.464 test accuracy: 0.38333333333333336
+iteration: 48 index: Elegant Sunburst Lichen train cross-entropy: -1.5697849988937378 test cross-entropy: -1.6480809450149536 train accuracy: 0.478 test accuracy: 0.3333333333333333
+iteration: 48 index: Golden-eye Lichen train cross-entropy: -1.569480299949646 test cross-entropy: -1.647292971611023 train accuracy: 0.454 test accuracy: 0.36666666666666664
+iteration: 48 index: slender orange-bush train cross-entropy: -1.571334958076477 test cross-entropy: -1.6490439176559448 train accuracy: 0.462 test accuracy: 0.35
+iteration: 48 index: Golden Hair-lichen train cross-entropy: -1.5671436786651611 test cross-entropy: -1.6542322635650635 train accuracy: 0.428 test accuracy: 0.35
+iteration: 48 index: Hooded Sunburst Lichen train cross-entropy: -1.570509433746338 test cross-entropy: -1.6569560766220093 train accuracy: 0.44 test accuracy: 0.35
+iteration: 48 index: Maritime Sunburst Lichen train cross-entropy: -1.5682814121246338 test cross-entropy: -1.6586586236953735 train accuracy: 0.45 test accuracy: 0.31666666666666665
+iteration: 49 index: Elegant Sunburst Lichen train cross-entropy: -1.5770319700241089 test cross-entropy: -1.6764994859695435 train accuracy: 0.52 test accuracy: 0.43333333333333335
+iteration: 49 index: Golden-eye Lichen train cross-entropy: -1.561248779296875 test cross-entropy: -1.6611882448196411 train accuracy: 0.512 test accuracy: 0.45
+iteration: 49 index: slender orange-bush train cross-entropy: -1.5840308666229248 test cross-entropy: -1.7257782220840454 train accuracy: 0.39 test accuracy: 0.26666666666666666
+iteration: 49 index: Golden Hair-lichen train cross-entropy: -1.5863006114959717 test cross-entropy: -1.7288134098052979 train accuracy: 0.41 test accuracy: 0.26666666666666666
+iteration: 49 index: Hooded Sunburst Lichen train cross-entropy: -1.5800992250442505 test cross-entropy: -1.6763592958450317 train accuracy: 0.488 test accuracy: 0.38333333333333336
+iteration: 49 index: Maritime Sunburst Lichen train cross-entropy: -1.5888055562973022 test cross-entropy: -1.6870169639587402 train accuracy: 0.482 test accuracy: 0.38333333333333336
+iteration: 50 index: Elegant Sunburst Lichen train cross-entropy: -1.5777162313461304 test cross-entropy: -1.657456874847412 train accuracy: 0.5 test accuracy: 0.43333333333333335
+iteration: 50 index: Golden-eye Lichen train cross-entropy: -1.5642943382263184 test cross-entropy: -1.6238619089126587 train accuracy: 0.514 test accuracy: 0.4166666666666667
+iteration: 50 index: slender orange-bush train cross-entropy: -1.5696669816970825 test cross-entropy: -1.622392177581787 train accuracy: 0.474 test accuracy: 0.4166666666666667
+iteration: 50 index: Golden Hair-lichen train cross-entropy: -1.5767709016799927 test cross-entropy: -1.637575626373291 train accuracy: 0.428 test accuracy: 0.36666666666666664
+iteration: 50 index: Hooded Sunburst Lichen train cross-entropy: -1.5622118711471558 test cross-entropy: -1.6412594318389893 train accuracy: 0.472 test accuracy: 0.38333333333333336
+iteration: 50 index: Maritime Sunburst Lichen train cross-entropy: -1.5784847736358643 test cross-entropy: -1.6341278553009033 train accuracy: 0.416 test accuracy: 0.35
+iteration: 51 index: Elegant Sunburst Lichen train cross-entropy: -1.584054708480835 test cross-entropy: -1.6394718885421753 train accuracy: 0.402 test accuracy: 0.31666666666666665
+iteration: 51 index: Golden-eye Lichen train cross-entropy: -1.5885605812072754 test cross-entropy: -1.638601303100586 train accuracy: 0.474 test accuracy: 0.36666666666666664
+iteration: 51 index: slender orange-bush train cross-entropy: -1.5893118381500244 test cross-entropy: -1.6305935382843018 train accuracy: 0.508 test accuracy: 0.4666666666666667
+iteration: 51 index: Golden Hair-lichen train cross-entropy: -1.5909067392349243 test cross-entropy: -1.6656973361968994 train accuracy: 0.464 test accuracy: 0.36666666666666664
+iteration: 51 index: Hooded Sunburst Lichen train cross-entropy: -1.5844162702560425 test cross-entropy: -1.6574162244796753 train accuracy: 0.456 test accuracy: 0.4
+iteration: 51 index: Maritime Sunburst Lichen train cross-entropy: -1.5862704515457153 test cross-entropy: -1.6461145877838135 train accuracy: 0.416 test accuracy: 0.26666666666666666
+iteration: 52 index: Elegant Sunburst Lichen train cross-entropy: -1.5700323581695557 test cross-entropy: -1.6305954456329346 train accuracy: 0.438 test accuracy: 0.31666666666666665
+iteration: 52 index: Golden-eye Lichen train cross-entropy: -1.5939903259277344 test cross-entropy: -1.6345411539077759 train accuracy: 0.414 test accuracy: 0.4
+iteration: 52 index: slender orange-bush train cross-entropy: -1.588001012802124 test cross-entropy: -1.6462650299072266 train accuracy: 0.414 test accuracy: 0.3333333333333333
+iteration: 52 index: Golden Hair-lichen train cross-entropy: -1.6002205610275269 test cross-entropy: -1.6709903478622437 train accuracy: 0.41 test accuracy: 0.26666666666666666
+iteration: 52 index: Hooded Sunburst Lichen train cross-entropy: -1.5765448808670044 test cross-entropy: -1.6622053384780884 train accuracy: 0.414 test accuracy: 0.3333333333333333
+iteration: 52 index: Maritime Sunburst Lichen train cross-entropy: -1.5881637334823608 test cross-entropy: -1.6353334188461304 train accuracy: 0.452 test accuracy: 0.36666666666666664
+iteration: 53 index: Elegant Sunburst Lichen train cross-entropy: -1.5712261199951172 test cross-entropy: -1.6548840999603271 train accuracy: 0.442 test accuracy: 0.35
+iteration: 53 index: Golden-eye Lichen train cross-entropy: -1.5694504976272583 test cross-entropy: -1.6467821598052979 train accuracy: 0.458 test accuracy: 0.4
+iteration: 53 index: slender orange-bush train cross-entropy: -1.562401533126831 test cross-entropy: -1.6468898057937622 train accuracy: 0.474 test accuracy: 0.35
+iteration: 53 index: Golden Hair-lichen train cross-entropy: -1.5695440769195557 test cross-entropy: -1.6579833030700684 train accuracy: 0.42 test accuracy: 0.31666666666666665
+iteration: 53 index: Hooded Sunburst Lichen train cross-entropy: -1.5617873668670654 test cross-entropy: -1.6377720832824707 train accuracy: 0.514 test accuracy: 0.4166666666666667
+iteration: 53 index: Maritime Sunburst Lichen train cross-entropy: -1.5702636241912842 test cross-entropy: -1.6554145812988281 train accuracy: 0.426 test accuracy: 0.31666666666666665
+iteration: 54 index: Elegant Sunburst Lichen train cross-entropy: -1.5755164623260498 test cross-entropy: -1.6438926458358765 train accuracy: 0.48 test accuracy: 0.38333333333333336
+iteration: 54 index: Golden-eye Lichen train cross-entropy: -1.566674828529358 test cross-entropy: -1.6390608549118042 train accuracy: 0.524 test accuracy: 0.43333333333333335
+iteration: 54 index: slender orange-bush train cross-entropy: -1.585418701171875 test cross-entropy: -1.6471773386001587 train accuracy: 0.528 test accuracy: 0.4166666666666667
+iteration: 54 index: Golden Hair-lichen train cross-entropy: -1.5938165187835693 test cross-entropy: -1.6644524335861206 train accuracy: 0.416 test accuracy: 0.31666666666666665
+iteration: 54 index: Hooded Sunburst Lichen train cross-entropy: -1.5801790952682495 test cross-entropy: -1.6669795513153076 train accuracy: 0.42 test accuracy: 0.31666666666666665
+iteration: 54 index: Maritime Sunburst Lichen train cross-entropy: -1.5852622985839844 test cross-entropy: -1.6429370641708374 train accuracy: 0.476 test accuracy: 0.36666666666666664

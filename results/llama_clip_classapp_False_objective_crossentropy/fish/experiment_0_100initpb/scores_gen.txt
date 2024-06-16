@@ -1,0 +1,20 @@
+iteration: 0 index: Caribbean Bluehead Wrasse train cross-entropy: -1.488887071609497 test cross-entropy: -1.5396828651428223 train accuracy: 0.358 test accuracy: 0.28
+iteration: 0 index: Six-bar Wrasse train cross-entropy: -1.4982287883758545 test cross-entropy: -1.5739566087722778 train accuracy: 0.364 test accuracy: 0.28
+iteration: 0 index: Cortez rainbow wrasse train cross-entropy: -1.4919142723083496 test cross-entropy: -1.5401666164398193 train accuracy: 0.386 test accuracy: 0.36
+iteration: 0 index: Moon Wrasse train cross-entropy: -1.4881197214126587 test cross-entropy: -1.553128957748413 train accuracy: 0.346 test accuracy: 0.28
+iteration: 0 index: Ornate Wrasse train cross-entropy: -1.4852650165557861 test cross-entropy: -1.5121912956237793 train accuracy: 0.392 test accuracy: 0.36
+iteration: 1 index: Caribbean Bluehead Wrasse train cross-entropy: -1.491719365119934 test cross-entropy: -1.554540991783142 train accuracy: 0.34 test accuracy: 0.26
+iteration: 1 index: Six-bar Wrasse train cross-entropy: -1.4909946918487549 test cross-entropy: -1.5409760475158691 train accuracy: 0.41 test accuracy: 0.32
+iteration: 1 index: Cortez rainbow wrasse train cross-entropy: -1.4905753135681152 test cross-entropy: -1.533188819885254 train accuracy: 0.368 test accuracy: 0.34
+iteration: 1 index: Moon Wrasse train cross-entropy: -1.4931142330169678 test cross-entropy: -1.5544244050979614 train accuracy: 0.314 test accuracy: 0.22
+iteration: 1 index: Ornate Wrasse train cross-entropy: -1.483901023864746 test cross-entropy: -1.5437966585159302 train accuracy: 0.366 test accuracy: 0.28
+iteration: 2 index: Caribbean Bluehead Wrasse train cross-entropy: -1.4866288900375366 test cross-entropy: -1.5041900873184204 train accuracy: 0.392 test accuracy: 0.34
+iteration: 2 index: Six-bar Wrasse train cross-entropy: -1.497006893157959 test cross-entropy: -1.5496865510940552 train accuracy: 0.374 test accuracy: 0.28
+iteration: 2 index: Cortez rainbow wrasse train cross-entropy: -1.4806138277053833 test cross-entropy: -1.5123696327209473 train accuracy: 0.388 test accuracy: 0.38
+iteration: 2 index: Moon Wrasse train cross-entropy: -1.4774738550186157 test cross-entropy: -1.5301079750061035 train accuracy: 0.36 test accuracy: 0.26
+iteration: 2 index: Ornate Wrasse train cross-entropy: -1.4855008125305176 test cross-entropy: -1.544620394706726 train accuracy: 0.348 test accuracy: 0.24
+iteration: 3 index: Caribbean Bluehead Wrasse train cross-entropy: -1.495637059211731 test cross-entropy: -1.5540143251419067 train accuracy: 0.33 test accuracy: 0.28
+iteration: 3 index: Six-bar Wrasse train cross-entropy: -1.4902294874191284 test cross-entropy: -1.5442452430725098 train accuracy: 0.376 test accuracy: 0.28
+iteration: 3 index: Cortez rainbow wrasse train cross-entropy: -1.486814260482788 test cross-entropy: -1.5400760173797607 train accuracy: 0.356 test accuracy: 0.28
+iteration: 3 index: Moon Wrasse train cross-entropy: -1.4908156394958496 test cross-entropy: -1.5487830638885498 train accuracy: 0.32 test accuracy: 0.24
+iteration: 3 index: Ornate Wrasse train cross-entropy: -1.4810287952423096 test cross-entropy: -1.522506594657898 train accuracy: 0.352 test accuracy: 0.26

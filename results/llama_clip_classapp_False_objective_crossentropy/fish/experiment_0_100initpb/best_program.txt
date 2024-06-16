@@ -1,0 +1,30 @@
+iteration:  0 best program: 
+class Caribbean Bluehead Wrasse: ['a trumpetfish in a sea fan', 'a blue-and-black damselfish school', 'coral or sea anemones', 'underwater grasslands or kelp forests', 'a trumpetfish with a blue body', 'a blue tang swimming near a coral reef']
+class Six-bar Wrasse: ['a tropical fish with blue and yellow stripes', 'grate or grille on top', 'a small fish with bright orange and yellow stripes swimming near a coral reef', 'speckled with black and white', 'a clownfish', 'striped fish swimming']
+class Cortez rainbow wrasse: ['turbid water near the surface', 'a school of colorful fish', 'a lifeguard station', 'a school of small fish swimming in unison through a coral reef', 'lighthouse sits on a small rocky island', 'a large school of fish swimming in a circular pattern near a coral reef']
+class Moon Wrasse: ['a bright orange-yellow parrotfish', 'a brightly-colored parrotfish', 'a rainbow-colored parrotfish', 'a purple-and-red-colored parrotfish', 'a sand tiger shark', 'a snake eel']
+class Ornate Wrasse: ['oars or a paddle', 'sailboats', 'an archetypal sea monster', 'a yellowtails damselfish', 'a giant clam', 'a school of blue-throated parrotfish']
+iteration:  1 best program: 
+class Caribbean Bluehead Wrasse: ['a trumpetfish in a sea fan', 'a blue-and-black damselfish school', 'coral or sea anemones', 'underwater grasslands or kelp forests', 'a trumpetfish with a blue body', 'a blue tang swimming near a coral reef']
+class Six-bar Wrasse: ['a tropical fish with blue and yellow stripes', 'grate or grille on top', 'a small fish with bright orange and yellow stripes swimming near a coral reef', 'speckled with black and white', 'a clownfish', 'striped fish swimming']
+class Cortez rainbow wrasse: ['turbid water near the surface', 'a school of colorful fish', 'a lifeguard station', 'a school of small fish swimming in unison through a coral reef', 'lighthouse sits on a small rocky island', 'a large school of fish swimming in a circular pattern near a coral reef']
+class Moon Wrasse: ['a bright orange-yellow parrotfish', 'a brightly-colored parrotfish', 'a rainbow-colored parrotfish', 'a purple-and-red-colored parrotfish', 'a sand tiger shark', 'a snake eel']
+class Ornate Wrasse: ['blue-green water', 'a striped triggerfish', 'a sea snake', 'a silvery fish', 'a shipwreck', 'an indigo hamlet']
+iteration:  2 best program: 
+class Caribbean Bluehead Wrasse: ['a school of yellowtail damselfish swimming near a coral reef', 'a moorish idol swimming near a sea turtle', 'a group of squid or octopus', 'a sunflower or other flower', 'a false clownfish or anemonefish', 'a blue tang swimming near a scuba or snorkeling mask']
+class Six-bar Wrasse: ['green and black swirls', 'white with black stripes', 'a fish with horizontal green and blue stripes', 'two large pectoral fins', 'a light brown or tan coloration with dark stripes running down the body', 'ejector seat']
+class Cortez rainbow wrasse: ['a school of small fish swimming together in a shallow area of the ocean', 'a beach umbrella', 'Underwater scene showing a school of fish swimming close to a coral reef', 'sternwheel', 'multicolored sea urchins', 'generally found outdoors']
+class Moon Wrasse: ['a colorful wrasse', 'a vibrant blue-and-red parrotfish', 'a blue tang with customers', 'a pistol grip or trigger', 'a blue parrotfish with blue and yellow', 'a blue naped parrotfish']
+class Ornate Wrasse: ['a school of silvery fish', 'bare sand or pebbles', 'an underwater cave or cavern', 'a barracuda', 'a banded sea snake', 'a sea urchin']
+iteration:  3 best program: 
+class Caribbean Bluehead Wrasse: ['a trumpetfish in a sea fan', 'a blue-and-black damselfish school', 'coral or sea anemones', 'underwater grasslands or kelp forests', 'a trumpetfish with a blue body', 'a blue tang swimming near a coral reef']
+class Six-bar Wrasse: ['a tropical fish with blue and yellow stripes', 'grate or grille on top', 'a small fish with bright orange and yellow stripes swimming near a coral reef', 'speckled with black and white', 'a clownfish', 'striped fish swimming']
+class Cortez rainbow wrasse: ['turbid water near the surface', 'a school of colorful fish', 'a lifeguard station', 'a school of small fish swimming in unison through a coral reef', 'lighthouse sits on a small rocky island', 'a large school of fish swimming in a circular pattern near a coral reef']
+class Moon Wrasse: ['a brightly-colored parrotfish with blue and orange', 'a blue-and-yellow parrotfish', 'a parrotfish with bright blue-and-yellow', 'a green-and-red-and-black octopus', 'a parrotfish with bright yellow and orange', 'a blue-and-yellow-and-green damselfish']
+class Ornate Wrasse: ['blue-green water', 'a striped triggerfish', 'a sea snake', 'a silvery fish', 'a shipwreck', 'an indigo hamlet']
+iteration:  4 best program: 
+class Caribbean Bluehead Wrasse: ['a trumpetfish in a sea fan', 'a blue-and-black damselfish school', 'coral or sea anemones', 'underwater grasslands or kelp forests', 'a trumpetfish with a blue body', 'a blue tang swimming near a coral reef']
+class Six-bar Wrasse: ['a tropical fish with blue and yellow stripes', 'grate or grille on top', 'a small fish with bright orange and yellow stripes swimming near a coral reef', 'speckled with black and white', 'a clownfish', 'striped fish swimming']
+class Cortez rainbow wrasse: ['turbid water near the surface', 'a school of colorful fish', 'a lifeguard station', 'a school of small fish swimming in unison through a coral reef', 'lighthouse sits on a small rocky island', 'a large school of fish swimming in a circular pattern near a coral reef']
+class Moon Wrasse: ['a brightly-colored parrotfish with blue and orange', 'a blue-and-yellow parrotfish', 'a parrotfish with bright blue-and-yellow', 'a green-and-red-and-black octopus', 'a parrotfish with bright yellow and orange', 'a blue-and-yellow-and-green damselfish']
+class Ornate Wrasse: ['blue-green water', 'a striped triggerfish', 'a sea snake', 'a silvery fish', 'a shipwreck', 'an indigo hamlet']
