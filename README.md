@@ -1,6 +1,6 @@
 # Evolving Interpretable Visual Classifiers with Large Language Models
 
-This is the code for the paper [Evolving Interpretable Visual Classifiers with Large Language Models](https://llm-mutate.cs.columbia.edu/) by [Mia Chiquier](https://www.cs.columbia.edu/~mia.chiquier/)\, [Utkarsh Mall](https://www.cs.columbia.edu/~utkarshm/)\ and [Carl Vondrick](https://www.cs.columbia.edu/~vondrick/). 
+This is the code for the paper [Evolving Interpretable Visual Classifiers with Large Language Models](https://llm-mutate.cs.columbia.edu/) by [Mia Chiquier](https://www.cs.columbia.edu/~mia.chiquier/), [Utkarsh Mall](https://www.cs.columbia.edu/~utkarshm/) and [Carl Vondrick](https://www.cs.columbia.edu/~vondrick/). 
 
 
 ![teaser](teaser.gif "Teaser")
