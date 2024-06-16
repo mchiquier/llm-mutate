@@ -1,5 +1,0 @@
-iteration: 0 train cross-entropy: -1.495314121246338 test cross-entropy: -1.539423942565918 train accuracy: 0.386 test accuracy: 0.36
-iteration: 1 train cross-entropy: -1.4852650165557861 test cross-entropy: -1.5121912956237793 train accuracy: 0.392 test accuracy: 0.36
-iteration: 2 train cross-entropy: -1.483901023864746 test cross-entropy: -1.5437966585159302 train accuracy: 0.366 test accuracy: 0.28
-iteration: 3 train cross-entropy: -1.4774738550186157 test cross-entropy: -1.5301079750061035 train accuracy: 0.36 test accuracy: 0.26
-iteration: 4 train cross-entropy: -1.4774738550186157 test cross-entropy: -1.5301079750061035 train accuracy: 0.36 test accuracy: 0.26
