@@ -1,0 +1,132 @@
+{ "Manzanita": {
+      "classes": [ 
+        "07709_Plantae_Tracheophyta_Magnoliopsida_Ericales_Ericaceae_Arctostaphylos_glauca",
+        "07710_Plantae_Tracheophyta_Magnoliopsida_Ericales_Ericaceae_Arctostaphylos_nevadensis",
+        "07711_Plantae_Tracheophyta_Magnoliopsida_Ericales_Ericaceae_Arctostaphylos_patula",
+        "07712_Plantae_Tracheophyta_Magnoliopsida_Ericales_Ericaceae_Arctostaphylos_pungens",
+        "07713_Plantae_Tracheophyta_Magnoliopsida_Ericales_Ericaceae_Arctostaphylos_uva-ursi"
+      ],
+      "common_names": [
+        "Bigberry",
+        "Pinemat",
+        "Greenleaf",
+        "Bluespruce",
+        "Bearberry"
+      ],
+      "ids": [7709,7710,7711,7712,7713],
+      "family_scientific_name":"Ericaceae",
+      "class_desc_gpt4": ["Often leathery, needle-like or broad", "Various colors like white, pink, red","Small, round, colors like blue or red","Can vary from shrubs to small trees","Typical shape similar to small urns or vases","Flowers often appear in clusters or solitary"],
+      "class_desc_ours":["thrives in poor soil", "a type of evergreen tree", "four-limbed mammal", "a dense growth habit", "a festive", "colorful atmosphere", "a spiral or twisted shape", "a shiny", "metallic surface", "a person or figure", "made of precious stones"],
+      "desc": [[" prickly acacia tree", "thorns，drooping branches", "thorns， erect branches", "evergreen", " yellow flowers"],
+      ["chickweed", "cuckoo flower", "sweet woodruff", "lambs lettuce", "daisy fleabane", "whitlow grass"],
+      ["chartreuse leaves with a hint of pink", "twisted, curved branches", "heart-shaped leaves with a silvery sheen", "fragrant, trumpet-shaped flowers", "a tree with a unique, spiral- patterned bark", "long, thin leaves with a velvety texture"],
+      ["ozzie (Australian Parrot)", " Eastern red cedar", " weeping habit", " drooping branches", " pungent heartwood", " insect resistant timber"],
+      ["Fragaria borealis", "wild strawberry", "red clover", "sweet woodruff", "Fragaria vesca", "dwarf veronica"]]
+    },
+    "Bulrush": {
+      "classes": [ 
+        "06297_Plantae_Tracheophyta_Liliopsida_Poales_Cyperaceae_Scirpus_atrovirens",
+        "06298_Plantae_Tracheophyta_Liliopsida_Poales_Cyperaceae_Scirpus_cyperinus",
+        "06299_Plantae_Tracheophyta_Liliopsida_Poales_Cyperaceae_Scirpus_microcarpus",
+        "06300_Plantae_Tracheophyta_Liliopsida_Poales_Cyperaceae_Scirpus_pendulus",
+        "06301_Plantae_Tracheophyta_Liliopsida_Poales_Cyperaceae_Scirpus_sylvaticus"
+      ],
+      "common_names": [
+        "darkgreen_bulrush",
+        "woolgrass",
+        "panicled_bulrush",
+        "pendulous_bulrush",
+        "wood_clubrush"
+      ],
+      "ids": [6297,6298,6299,6300,6301],
+      "family_scientific_name":"Scirpus",
+      "class_desc_gpt4":["Linear, narrow, often with a prominent midvein","Stems are typically solid and triangular in cross-section","Plants often grow in dense tufts or clumps","Flowers are usually grouped in spikelets","Small, often green or brown, without showy petals", "Flowers are often subtended by bracts"],
+      "class_desc_ours":["may have seed heads", "big bluestem grass", "Indian Grass", "Meadow grass", "a long, blunt snout", "stripes"],
+      "desc":  [["Helenium amarantoides", "Rudbeckia hirta", "Rudbeckia tricolor", "Cyperus blumei ssp. borealis", "Silphium terebinthinaceum", "Helianthus debilis"],
+                   ["ornamental grasses with dynamic movement", "low-lying shrubs with a golden hue", "plumes of pampas grass with seasonal color changes", "ornamental grasses with unique textures", "tall ornamental grasses with feathery plumes", "dried grasses with interesting seed heads","shrubs with showy flowers", "hardscape elements", "orange and yellow hues", " wispy cloud formations"],
+                 ["sharp, jagged edges on the teeth", "greenish-white flowers", "evergreen foliage", "saltwater or seawater", "white flowers", "a common weed with small white flowers"],
+                   ["dried flowers", "pressed flowers", "preserved leaves", "petals with lines", "smooth petals", "long stamens", "short stamens"],
+                   ["long, strap-like leaves,pale green in color", "small white flowers in short dense spikes", "glossy, dark green leaves", "dense, spreading growth habit", "yellow-green leaves with prominent whitish veins", "powdery blue-green leaves and dense terminal spikes of purple flowers", 
+                   "hairy stems and angular branches", "shiny, light green leaves and dense panicles of tiny white flowers"]]
+    },
+    "Wild Rye": { 
+      "classes": [
+        "06371_Plantae_Tracheophyta_Liliopsida_Poales_Poaceae_Elymus_canadensis",
+        "06372_Plantae_Tracheophyta_Liliopsida_Poales_Poaceae_Elymus_elymoides",
+        "06373_Plantae_Tracheophyta_Liliopsida_Poales_Poaceae_Elymus_hystrix",
+        "06374_Plantae_Tracheophyta_Liliopsida_Poales_Poaceae_Elymus_repens",
+        "06375_Plantae_Tracheophyta_Liliopsida_Poales_Poaceae_Elymus_virginicus"
+      ],
+      "common_names": [
+        "Canada_wild_rye",
+        "Squirreltail",
+        "Bottlebrush grass",
+        "common_couch",
+        "virginia_wildrye"
+      ],
+      "ids": [6371,6372,6373,6374,6375],
+      "family_scientific_name":"Elymus",
+      "class_desc_gpt4":["Hollow, segmented stems known as culms","Long, narrow, with veins running parallel","Leaves wrap around the stem with a sheath","Flowers arranged in clusters called spikelets","Often small with fine structures, lacking large petals", "Produces small, dry fruits called caryopses or grains"],
+      "class_desc_ours":["a short, rounded snout", "wheat stalks", "lines or stripes running crosswise", "lines or stripes running crosswise", "long, thin tail", "may have spines or quills"],
+      "desc":[["a serene countryside scene with fields of ripe wheat and a distant, hazy horizon", "fields of golden wheat blowing in the breeze", "a bale of hay in a peaceful meadow", "fields of tall, vibrant grasses and colorful wildflowers",
+    "fields of bright, yellow sunflowers", "a field of green, young wheat with a large, old tree in the background"],
+      ["desert lavender", "creosote bush", "arizona barrel cactus", "sand sagebrush", "spiny hedgehog cactus", "teddy bear cholla"],
+      ["birch-like bark", "spiky, dark green leaves", "diamond-shaped leaves", "cool, humid ravines", " cliff-dwelling", " edible nuts", "long, spreading branches", "clusters of greenish flowers", " twigs with reddish, swollen nodes"],
+        ["rows of long, thin, parallel strips", "uneven upper edge", "a ring or coil with small, green leaves", "a long, thin, flexible rod with uneven, roughened surfaces", "a piece of jewelry with a sharp, pointed spine", "typically made of leather with a long, thin strap"],
+          ["  smooth to finely pubescent", " compound palmate", "leaves Miami near lakeshores", "may have small hairs on leaves", "may form large colonies", "important to waterfowl"]]
+      },
+    "Wrasse": {
+      "classes": [ 
+        "02843_Animalia_Chordata_Actinopterygii_Perciformes_Labridae_Thalassoma_bifasciatum",
+        "02844_Animalia_Chordata_Actinopterygii_Perciformes_Labridae_Thalassoma_hardwicke",
+        "02845_Animalia_Chordata_Actinopterygii_Perciformes_Labridae_Thalassoma_lucasanum",
+        "02846_Animalia_Chordata_Actinopterygii_Perciformes_Labridae_Thalassoma_lunare",
+        "02847_Animalia_Chordata_Actinopterygii_Perciformes_Labridae_Thalassoma_pavo"
+      ],
+      "ids": [2843,2844,2845,2846,2847],
+      "common_names": [
+        "bluehead",
+        "sixbar",
+        "cortez_rainbow",
+        "moon_wrasse",
+        "ornate_wrasse"
+      ],
+      "family_scientific_name":"Thalassoma",
+      "class_desc_gpt4":["Streamlined, often elongated shape","Often vivid colors, with intricate patterns","Prominent, fleshy lips","Snouts that can be sharp or elongated","Dorsal and anal fins often have spiny rays","Smooth, circular scales covering the body"],
+      "class_desc_ours":["large fish swimming near(or on) a coral reef in an underwater environment", "image of a diver in an underwater environment", "1–4 large fish swimming together in an underwater scene", "a single brightly colored parrotfish swimming near a coral reef", "a Hawksbill  turtle swimming near a coral reef", "brightly colored tropical fish in an underwater environment"],
+      "desc": [["a blacktip reef shark swimming through a group of blue tang", "a school of butterflyfish swimming through a channel of sea fans", "a yellowtail damselfish and a blue-and-yellow damselfish swimming through a maze", "a clownfish peeking out of an anemone", "a foxface rabbitfish swimming through a group of blue-and-yellow damselfish", "a trumpetfish swimming through a group of moorish idols"],
+                 ["a fish with three or four horizontal stripes on a grey background", "a fish with vertical zebra stripes having white and dark grey colors"],
+                 ["a school of fish swimming together near a coral reef", "an underwater scene of a large, prehistoric-looking fish swimming alone", "a group of dolphins swimming together near a sunken ship", "an underwater scene of a school of snakes swimming together in the open water", "a group of flamingos swimming together in shallow water", "a large group of jellyfish swimming together near the surface"],
+                  ["a vibrant, rainbow-colored parrotfish swimming through a surreal, dreamlike underwater scene", "a blue tang with a shimmering, iridescent pattern", "a green-and-orange-colored parrotfish with a distorted, wavy appearance", "a yellow-and-blue-colored parrotfish with a colorful, sparkling background", "a purple-and-blue-colored parrotfish with a glowing, neon-like aura", "a neon-colored parrotfish with an electric, glowing effect"],
+                   ["a swordtail blenny", "a very small shrimp", "a periodic Sch Coris", "typically brown with yellow fins", "a small striped blenny", "a spotted lionfish"]]
+    },
+    "Lichen": {
+      "classes": [ 
+        "05438_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Rusavskia_elegans",
+        "05439_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Teloschistes_chrysophthalmus",
+        "05440_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Teloschistes_exilis",
+        "05441_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Teloschistes_flavicans",
+        "05442_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Xanthomendoza_fallax",
+        "05443_Fungi_Ascomycota_Lecanoromycetes_Teloschistales_Teloschistaceae_Xanthoria_parietina"
+      ],
+      "ids": [5438,5439,5440,5441,5442,5443],
+      "common_names": [
+        "Rusavskia_elegans",
+        "Teloschistes_chrysophthalmus",
+        "Teloschistes_exilis",
+        "Teloschistes_flavicans",
+        "Xanthomendoza_fallax",
+        "Xanthoria_parietina"
+      ],
+      "family_scientific_name":"Teloschistaceae",
+      "class_desc_gpt4":["Often vivid yellow, orange, or red thalli","Thalli can be crust-like or leafy in appearance","Often feature powdery reproductive structures called soredia","Disk-shaped fruiting bodies, often brightly colored","Thallus edges may be lobed or irregularly shaped","Typically form dense, compact patches on substrates like rock or bark"],
+      "class_desc_ours":[", and ", "a tree covered in lichen", "lime or lemon color", "covered in moss or lichen", "yellow or orange", "lichen on the trunk"],
+      "desc":[["rocks that contain hornblende or amphibolite", "rocks with a sandy texture and a reddish tint"],
+                   ["dainty, white flowers", "flap-like bracts", "stalked, gland-dotted leaves", "furry, velvety stems", "honey-scented Informally"],
+                   ["large clusters of small, fragrant flowers", " glossy, dark green, hairy leaves", "twigs with clusters of small, oval-shaped leaves", " pair of occasionally coloured, petal-like leaves with red veins", " slender, striated stems with thorns", " many-stemmed, shrubby tree with smooth, gray bark"],
+                   ["twigs covered in hoar frost", "hairy crown", "spiders caught in a spider web", "tendrils", "interlocking branches and twigs", "wispy, feathery foliage"],
+                   ["orthoclase", "striated", "biotite gneiss", " rhombic", "rapakivi", "elephant hide"],
+                   ["cracks in a rock", "normally found in warm areas", "columnar basalt", "unweathered rock surfaces", "a fresh vegetable", "worn, rounded stones"]]
+    }
+  }
+
