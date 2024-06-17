@@ -106,7 +106,6 @@ def pretraining(openai_client,model,config):
         pretraining_file = create_folder_and_log_exp_details(expname, config.llm_type, config.scoring,config.append_class,config.objective,scientific_names[i], config.batch_size)
 
         for iteration in range(config.max_iter):
-            pdb.set_trace()
             dict_of_generated_programs, classifier_bank = process_iteration(iteration, None, len(scientific_names), pretraining_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=True)
 
             if iteration == config.max_iter - 1:
@@ -120,14 +119,14 @@ def pretraining(openai_client,model,config):
 def process_iteration(iteration, scientific_names, num_classes, file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain):
     
     try:
-        print("iteration #: ", iteration)
+        print("iteration: ", iteration)
         if pretrain:
             classifier_bank, information = llm_mutate_pretrain(classifier_bank, img_batch, openai_client, config, iteration)
         else:
-            classifier_bank = llm_mutate_jointtrain(classifier_bank, num_classes, img_batch, scientific_names, iteration, file, config, openai_client) #, information = llm_mutate_jointtrain(classifier_bank, img_batch, openai_client, config, iteration)
-        #pdb.set_trace()
+            classifier_bank = llm_mutate_jointtrain(classifier_bank, num_classes, img_batch, scientific_names, iteration, file, config, openai_client) 
         if pretrain and information!=None:
             dict_of_generated_programs = evaluate_generation_and_log_pretrain(file, information, img_batch, dict_of_generated_programs, iteration)
+             
         return dict_of_generated_programs, classifier_bank
     
     except Exception as e:

@@ -6,7 +6,7 @@ class Config:
         # Model related configurations
         self.scoring = 'clip'  # could be 'clip', 'xvlm', etc.
         self.max_iter = 600
-        self.classifiers_initialized = 10
+        self.classifiers_initialized = 1000
         self.number_of_classifiers_in_prompt = 10
         self.batch_size = 2000
         self.llm_type = 'llama'  # could be 'gpt-3', 'codex', 'llama'
