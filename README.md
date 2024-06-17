@@ -31,7 +31,7 @@ echo YOUR_OPENAI_API_KEY_HERE > api.key
 ### Cloning this Repo
 
 ```bash
-git clone --recurse-submodules [https://github.com/cvlab-columbia/viper.git](https://github.com/mchiquier/llm-mutate.git)
+git clone --recurse-submodules https://github.com/mchiquier/llm-mutate.git
 ```
 
 ### Dependencies
