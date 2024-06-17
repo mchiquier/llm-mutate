@@ -60,7 +60,11 @@ python -m vllm.entrypoints.openai.api_server --model meta-llama/Llama-2-70b-chat
 ## Configuration
 
 
-## Running LLM-Mutate on a dataset
+## Running LLM-Mutate on iNaturalist
+
+'''
+python src/llm-mutate.py
+'''
 
 ## Inference
 
