@@ -117,22 +117,17 @@ def pretraining(openai_client,model,config):
 
     return list_of_pretraining_files
 
-#process_iteration(iteration, list_of_pretraining_files, num_classes, jointtrain_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=False)
 def process_iteration(iteration, scientific_names, num_classes, file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain):
     
-    # Simulate classifier enhancement and evaluation process
     try:
-        print(iteration, "here")
+        print("iteration #: ", iteration)
         if pretrain:
             classifier_bank, information = llm_mutate_pretrain(classifier_bank, img_batch, openai_client, config, iteration)
         else:
             classifier_bank = llm_mutate_jointtrain(classifier_bank, num_classes, img_batch, scientific_names, iteration, file, config, openai_client) #, information = llm_mutate_jointtrain(classifier_bank, img_batch, openai_client, config, iteration)
         #pdb.set_trace()
         if pretrain and information!=None:
-            #if pretrain:
             dict_of_generated_programs = evaluate_generation_and_log_pretrain(file, information, img_batch, dict_of_generated_programs, iteration)
-                #llm_mutate_jointtrain(program_bank, num_classes, img_batch_joint, train_dataset_joint, iteration, jointtrain_file, config, client)
-                #dict_of_generated_programs = evaluate_generation_and_log_jointtrain(pretraining_file, num_classes, information, classifier_bank, img_batch, dict_of_generated_programs, iteration)
         return dict_of_generated_programs, classifier_bank
     
     except Exception as e:
