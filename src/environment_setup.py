@@ -1,6 +1,5 @@
 import torch
 from clip import load as clip_load
-from archive.xvlm import XVLMModel
 from openai import OpenAI
 
 def initialize_llm(llm_type):
@@ -34,13 +33,5 @@ def initialize_model(scoring):
         device = torch.device(hparams['device'])
         model, preprocess = clip_load(hparams['model_size'], device=device, jit=True)
     
-    else:
-        # For other scoring, an example using XVLM
-        hparams['image_size'] = 384
-        hparams['device'] = 'cpu'  # Replace 'cpu' with 'cuda' if GPU is available and desired
-
-        # Initialize the XVLM model (assuming similar interface)
-        model = XVLMModel()
-        preprocess = None  # Assume no preprocessing is needed or done differently
 
     return model, preprocess

@@ -12,6 +12,7 @@ import pdb
 import numpy as np
 import ast
 import torch
+import copy
 import time
 import torchvision.utils as vutils
 import matplotlib.pyplot as plt
@@ -25,7 +26,6 @@ from sklearn.model_selection import train_test_split
 from torchvision.datasets.folder import default_loader
 from torch.utils.data import Dataset
 import aiohttp
-from server import Client
 import asyncio
 import pickle
 import concurrent.futures
@@ -41,6 +41,88 @@ import json
 
 import os
 
+imagenet_templates = [
+    'a bad photo of a {}.',
+    'a photo of many {}.',
+    'a sculpture of a {}.',
+    'a photo of the hard to see {}.',
+    'a low resolution photo of the {}.',
+    'a rendering of a {}.',
+    'graffiti of a {}.',
+    'a bad photo of the {}.',
+    'a cropped photo of the {}.',
+    'a tattoo of a {}.',
+    'the embroidered {}.',
+    'a photo of a hard to see {}.',
+    'a bright photo of a {}.',
+    'a photo of a clean {}.',
+    'a photo of a dirty {}.',
+    'a dark photo of the {}.',
+    'a drawing of a {}.',
+    'a photo of my {}.',
+    'the plastic {}.',
+    'a photo of the cool {}.',
+    'a close-up photo of a {}.',
+    'a black and white photo of the {}.',
+    'a painting of the {}.',
+    'a painting of a {}.',
+    'a pixelated photo of the {}.',
+    'a sculpture of the {}.',
+    'a bright photo of the {}.',
+    'a cropped photo of a {}.',
+    'a plastic {}.',
+    'a photo of the dirty {}.',
+    'a jpeg corrupted photo of a {}.',
+    'a blurry photo of the {}.',
+    'a photo of the {}.',
+    'a good photo of the {}.',
+    'a rendering of the {}.',
+    'a {} in a video game.',
+    'a photo of one {}.',
+    'a doodle of a {}.',
+    'a close-up photo of the {}.',
+    'a photo of a {}.',
+    'the origami {}.',
+    'the {} in a video game.',
+    'a sketch of a {}.',
+    'a doodle of the {}.',
+    'a origami {}.',
+    'a low resolution photo of a {}.',
+    'the toy {}.',
+    'a rendition of the {}.',
+    'a photo of the clean {}.',
+    'a photo of a large {}.',
+    'a rendition of a {}.',
+    'a photo of a nice {}.',
+    'a photo of a weird {}.',
+    'a blurry photo of a {}.',
+    'a cartoon {}.',
+    'art of a {}.',
+    'a sketch of the {}.',
+    'a embroidered {}.',
+    'a pixelated photo of a {}.',
+    'itap of the {}.',
+    'a jpeg corrupted photo of the {}.',
+    'a good photo of a {}.',
+    'a plushie {}.',
+    'a photo of the nice {}.',
+    'a photo of the small {}.',
+    'a photo of the weird {}.',
+    'the cartoon {}.',
+    'art of the {}.',
+    'a drawing of the {}.',
+    'a photo of the large {}.',
+    'a black and white photo of a {}.',
+    'the plushie {}.',
+    'a dark photo of a {}.',
+    'itap of a {}.',
+    'graffiti of the {}.',
+    'a toy {}.',
+    'itap of my {}.',
+    'a photo of a cool {}.',
+    'a photo of a small {}.',
+    'a tattoo of the {}.',
+]
 # generator = Llama.build(
 #     ckpt_dir="llama3/Meta-Llama-3-70B-Instruct",
 #     tokenizer_path="llama3/Meta-Llama-3-70B-Instruct/tokenizer.model",
@@ -81,8 +163,8 @@ nycdata_transforms = {
 
 def OpenSource(theprompt, index, client):
     try:
-        completion = client.completions.create(model="meta-llama/Llama-2-70b-chat-hf",
-                                        prompt=theprompt, max_tokens=200)
+        #pdb.set_trace()
+        completion = client.completions.create(model="meta-llama/Llama-2-70b-chat-hf",prompt=theprompt, max_tokens=200)
         
         return completion.choices[0].text, index
     except:
@@ -478,49 +560,6 @@ class ImageNet(Dataset):
     
 
 
-# class ImageNet(Dataset):
-#     def __init__(self, root_dir,class_name='class1', second_class_name='class2',train=True, transform=None,opposite_id_dict=None, loader=default_loader):
-
-
-#         allowed_classes = list(opposite_id_dict.keys())
-
-#         self.class_imgs = [os.path.join(root_dir, class_name, img) for img in os.listdir(os.path.join(root_dir, class_name))]
-#         self.class_two_imgs = [os.path.join(root_dir, second_class_name, img) for img in os.listdir(os.path.join(root_dir, second_class_name))]# class_ in os.listdir(root_dir) if class_ != class_name for img in os.listdir(os.path.join(root_dir, class_))]
-#         self.notclass_imgs = [os.path.join(root_dir, class_, img) for class_ in os.listdir(root_dir) if class_ != class_name  and class_ in allowed_classes for img in os.listdir(os.path.join(root_dir, class_))]
-        
-#         self.train = train
-#         self.transform = transform
-#         self.opposite_id_dict=opposite_id_dict
-#         self.loader = loader
-
-#         #split the data into train and test
-        
-#         self.truelength =min(len(self.class_imgs), len(self.class_two_imgs))
-
-#     def __len__(self):
-        
-#         return self.truelength
-
-#     def __getitem__(self, idx):
-
-#         idx = idx%self.truelength
-#         classidx = self.opposite_id_dict[self.notclass_imgs[idx].split("/")[7]]
-#         if torch.is_tensor(idx):
-#             idx = idx.tolist()
-
-#         class1_image = Image.open(self.class_imgs[idx]).convert("RGB")
-#         class2_image = Image.open(self.class_two_imgs[idx]).convert("RGB")
-#         class3_image = Image.open(self.notclass_imgs[idx]).convert("RGB")
-
-
-#         if self.transform:
-#             class1_image = self.transform(class1_image)
-#             class2_image = self.transform(class2_image)
-#             class3_image = self.transform(class3_image)
-
-#         return class1_image, class2_image, class3_image,classidx
-    
-
 
 def extract_from_quotes(input_string):
     return re.findall(r"'(.*?)'", input_string)
@@ -566,34 +605,178 @@ def get_meanlist_from_scores(scores_pos, scores_mixed):
     per_word_mean.append(total_mean.item())
     return per_word_mean
 
-def evaluate_classifier_bank_jointtrain(pretraining_file, information, img_batch, dict_of_generated_programs):
-    best_prompt_score_index = torch.argmax(torch.tensor(scores_picked))
-    best_prompt_program=programs_encoded_picked[best_prompt_score_index]
+# def evaluate_generation_and_log_jointtrain(jointtrain_file, num_classes, information, classifier_bank, img_batch, dict_of_generated_programs, iteration):
+#     [scores_picked, programs_encoded_picked, scores_raw_picked, scores_raw, scores, programs_string, programs_encoded, gen_program_encoded, gen_raw_scores, gen_beforeandafter] = information 
+#     best_prompt_score_index = torch.argmax(torch.tensor(scores_picked))
+#     best_prompt_program=programs_encoded_picked[best_prompt_score_index]
+#     #pdb.set_trace()
 
-    scores_crossentropy_bestprompt_train, scores_raw_bestprompt_train = scores_picked[best_prompt_score_index], scores_raw_picked[best_prompt_score_index]
+#     scores_crossentropy_bestprompt_train, scores_raw_bestprompt_train = scores_picked[best_prompt_score_index], scores_raw_picked[best_prompt_score_index]
 
-    best_llm_index = torch.argmax(scores).item()
-    best_llm_program_string = programs_string[best_llm_index]
-    best_llm_program_encoded = programs_encoded[best_llm_index]
+#     best_llm_index = torch.argmax(scores).item()
+#     best_llm_program_string = programs_string[best_llm_index]
+#     best_llm_program_encoded = programs_encoded[best_llm_index]
+#     #pdb.set_trace()
 
-    scores_crossentropy_bestbank_train, scores_raw_bestbank_train = scores[best_llm_index].item(),scores_raw[best_llm_index]
-    accuracy_train_best = get_accuracy(scores_raw_bestbank_train,img_batch_joint.classidx)
+#     scores_crossentropy_bestbank_train, scores_raw_bestbank_train = scores[best_llm_index].item(),scores_raw[best_llm_index]
+#     accuracy_train_best = get_accuracy(scores_raw_bestbank_train,img_batch.classidx)
 
-    print("best bank score: " , scores_crossentropy_bestbank_train)
+#     print("best bank score: " , scores_crossentropy_bestbank_train)
 
-    img_batch_joint.to_test()
+#     img_batch.to_test()
+#     #pdb.set_trace()
 
-    scores_crossentropy_bestprompt_test, scores_raw_bestprompt_test = img_batch_joint.score(best_prompt_program)
-    scores_crossentropy_bestbank_test, scores_raw_bestbank_test = img_batch_joint.score(best_llm_program_encoded)
-    accuracy_test_best = get_accuracy(scores_raw_bestbank_test,img_batch_joint.classidx)
+#     scores_crossentropy_bestprompt_test, scores_raw_bestprompt_test = img_batch.score(best_prompt_program)
+#     scores_crossentropy_bestbank_test, scores_raw_bestbank_test = img_batch.score(best_llm_program_encoded)
+#     accuracy_test_best = get_accuracy(scores_raw_bestbank_test,img_batch.classidx)
 
-    #pdb.set_trace()
-    np.save(jointtrain_file + "/scores_train/" + str(iter) + "_raw_bestbank.npy",scores_raw_bestbank_train.detach().numpy())
-    np.save(jointtrain_file + "/scores_train/" + str(iter) + "_raw_bestprompt.npy",scores_raw_bestprompt_train.detach().numpy())
-    np.save(jointtrain_file + "/scores_test/" + str(iter)  + "_raw_bestbank.npy",scores_raw_bestbank_test.detach().numpy())
-    np.save(jointtrain_file + "/scores_test/" + str(iter)  + "_raw_bestprompt.npy",scores_raw_bestprompt_test.detach().numpy())
+#     #pdb.set_trace()
+#     np.save(jointtrain_file + "/scores_train/" + str(iteration) + "_raw_bestbank.npy",scores_raw_bestbank_train.detach().numpy())
+#     np.save(jointtrain_file + "/scores_train/" + str(iteration) + "_raw_bestprompt.npy",scores_raw_bestprompt_train.detach().numpy())
+#     np.save(jointtrain_file + "/scores_test/" + str(iteration)  + "_raw_bestbank.npy",scores_raw_bestbank_test.detach().numpy())
+#     np.save(jointtrain_file + "/scores_test/" + str(iteration)  + "_raw_bestprompt.npy",scores_raw_bestprompt_test.detach().numpy())
+#     #_trace()
 
-def evaluate_classifier_bank(pretraining_file, information, img_batch, dict_of_generated_programs):
+#     with open(jointtrain_file + '/best_program.txt', 'a') as b:     
+#         with open(jointtrain_file + '/scores_best.txt', 'a') as s:
+#             s.write("iteration: " + str(iteration) + " train cross-entropy: " + str(scores_crossentropy_bestbank_train) + " test cross-entropy: " + str(scores_crossentropy_bestbank_test) 
+#                     + " train accuracy: " + str(accuracy_train_best) + " test accuracy: " + str(accuracy_test_best) + "\n")
+#             perclass = "".join(["class " + img_batch.scientific_names[i] + ": " + str(best_llm_program_string[i]) + "\n" for i in range(num_classes)])
+#             b.write("iteration:  " + str(iteration) + " best program: \n" + perclass)
+
+#     #pdb.set_trace()
+#     if not os.path.isdir(jointtrain_file + "/program_bank"): 
+#         os.mkdir(jointtrain_file + "/program_bank")
+#     with open(jointtrain_file + "/program_bank/iter_" + str(iteration) +  ".pkl", 'wb') as f: pickle.dump(classifier_bank, f)
+#     #pdb.set_trace()
+#     pdb.set_trace()
+#     accuracy_train_gen = get_accuracy(gen_raw_scores,img_batch.classidx)
+#     np.save(jointtrain_file+ "/scores_train/" + str(iteration) +"_" +str(index)+ "_index.npy",img_batch.classidx.detach().numpy())
+#     np.save(jointtrain_file + "/scores_train/" + str(iteration) +"_" +str(index) + "_raw_gen.npy",gen_raw_scores.detach().numpy())
+#     pdb.set_trace()
+#     img_batch.to_test()
+
+#     pdb.set_trace()
+#     gen_cross_entropy_score_test, gen_raw_scores_test = img_batch.score(gen_program_encoded)
+#     accuracy_test_gen = get_accuracy(gen_raw_scores_test,img_batch.classidx)
+#     pdb.set_trace()
+#     np.save(jointtrain_file + "/scores_test/" + str(iteration) +"_" +str(index)+ "_index.npy",img_batch.classidx.detach().numpy())
+#     np.save(jointtrain_file + "/scores_test/" + str(iteration) +"_" +str(index)+ "_raw_gen.npy",gen_raw_scores_test.detach().numpy())
+    
+#     with open(jointtrain_file +'/generations.txt', 'a') as c:
+#         with open(jointtrain_file + '/scores_gen.txt', 'a') as q:
+#             c.write("iteration: " + str(iteration) + " index: " + train_dataset.common_name[index] + " generation: " + gen_beforeandafter + "\n")
+#             q.write("iteration: " + str(iteration) + " index: " + train_dataset.common_name[index] + " train cross-entropy: " + str(gen_cross_entropy_score) + " test cross-entropy: " + str(gen_cross_entropy_score_test) + " train accuracy: " + str(accuracy_train_gen) + " test accuracy: " + str(accuracy_test_gen) + "\n")
+
+def best(img_batch, result, index, programs_encoded_picked_cur_preclone, programs_strings_picked_cur_preclone):
+
+        programs_encoded_picked_cur = programs_encoded_picked_cur_preclone.clone()
+        programs_strings_picked_cur = copy.deepcopy(programs_strings_picked_cur_preclone)
+        list_of_scores = []
+        list_of_rawscores = []
+        list_of_programs_encoded =[]
+        list_of_programs_str =[]
+        list_of_beforeandafter = []
+        completion = extract_newfun_definition(result, "newfun")
+        img_batch.to_train()
+
+        if completion: 
+            try: 
+                #encoding the attributes
+                programs_str_gen = extract_attributes_from_string(completion)
+                programs_enc_gen = transform_tensor(img_batch.encode(programs_str_gen)).T
+                
+                for p in range(len(programs_encoded_picked_cur)):
+                    programs_encoded_picked_cur[p][index] = programs_enc_gen
+                    beforeandafter = "before: " + str(programs_strings_picked_cur[p][index]) + "\n after: " + str(programs_str_gen)
+                    programs_strings_picked_cur[p][index] = programs_str_gen
+                    score, rawscores = img_batch.score(programs_encoded_picked_cur[p])
+                    list_of_scores.append(score)
+                    list_of_rawscores.append(rawscores)
+                    list_of_programs_encoded.append(programs_encoded_picked_cur[p])
+                    list_of_programs_str.append(programs_strings_picked_cur[p])
+                    list_of_beforeandafter.append(beforeandafter)
+
+                best_index = list_of_scores.index(max(list_of_scores))
+                newscore = list_of_scores[best_index]
+                best_program_encoded = list_of_programs_encoded[best_index]
+                best_program_string= list_of_programs_str[best_index]
+                newrawscore = list_of_rawscores[best_index]
+                beforeandafter = list_of_beforeandafter[best_index]
+                return [newscore, newrawscore], best_program_encoded, best_program_string, beforeandafter, index
+            
+            except Exception as error:
+                    print("error here", error)
+                    return None, None,None, None, None
+        else:
+            return None,None,None,None, None
+
+# def llm_mutate_jointtrain(classifier_bank, img_batch, openai_client, config, iteration):
+
+#     img_batch.to_train()
+#     scores = torch.tensor([x[-1] for x in classifier_bank])
+#     scores_raw = torch.cat([x[-2][None] for x in classifier_bank],dim=0)
+#     classifier_string = [x[0] for x in classifier_bank]
+#     classifier_encoded = torch.cat([x[1][None] for x in classifier_bank],dim=0)
+
+#     probabilities = torch.softmax(scores,dim=0)
+#     indices = torch.multinomial(probabilities, config.number_of_classifiers_in_prompt, replacement=config.replacement)
+    
+#     classifier_strings_picked = [classifier_string[i] for i in indices]
+#     classifier_encoded_picked = classifier_encoded[indices] 
+#     scores_picked = scores[indices].tolist()
+#     scores_raw_picked = scores_raw[indices]
+
+#     sorted_indices = sorted(range(len(scores_picked)), key=lambda i: scores_picked[i])
+
+#     scores_picked = [scores_picked[i] for i in sorted_indices]
+#     scores_raw_picked = scores_raw_picked[torch.tensor(sorted_indices)] 
+#     classifier_strings_picked = [classifier_strings_picked[i] for i in sorted_indices]
+#     classifier_encoded_picked = classifier_encoded_picked[torch.tensor(sorted_indices)]
+
+#     try: 
+                
+#         all_results=[]
+#         all_futures=[]
+#         list_of_prompts = []
+#         with concurrent.futures.ThreadPoolExecutor() as executor:
+#             num_classes = len(classifier_strings_picked[0])
+#             for index in range(num_classes):
+#                 print("index: ", index)
+
+#                 theprompt = construct_prompt_jointtrain(classifier_strings_picked, index, iter)
+#                 #with open(jointtrain_file + '/prompts.txt', 'a') as t: t.write("iteration: " + str(iter) + "index: " + str(index) + " prompt: " + theprompt + " \n")
+#                 list_of_prompts.append(theprompt)
+#             futures = [executor.submit(call_OpenSource, list_of_prompts[int(i/config.per_index_gen)], int(i/config.per_index_gen), openai_client) for i in range(config.per_index_gen*num_classes)]
+#             all_results = [future.result() for future in concurrent.futures.as_completed(futures)]
+
+#         with concurrent.futures.ThreadPoolExecutor() as executor:
+#             #for every time i call vllm, I have a best set. 
+#             best_result_futures = [executor.submit(best, img_batch,all_results[i][0],all_results[i][1],classifier_encoded_picked, classifier_strings_picked) for i in range(config.per_index_gen*num_classes)] #len(all_results)
+#             best_results =  [future.result() for future in concurrent.futures.as_completed(best_result_futures)]
+        
+#         for index in range(num_classes):
+
+#             img_batch.to_train()
+#             filtered_bestresults = [x for x in best_results if x[0]]
+#             index_bestresults = [x for x in filtered_bestresults if x[-1]==index]
+
+#             try:
+#                 #Now we are taking the maximum across the batches generated per index
+#                 indexscores = [index_bestresults[i][0][0] for i in range(len(index_bestresults))]
+#                 bestforindex = indexscores.index(max(indexscores))
+#                 [gen_cross_entropy_score, gen_raw_scores], gen_classifier_encoded, gen_classifier_string, gen_beforeandafter, gen_index = index_bestresults[bestforindex]
+#             except:
+#                 continue
+
+#             classifier_bank.append([gen_classifier_string, gen_classifier_encoded, gen_raw_scores, gen_cross_entropy_score])
+#             information = [scores_picked, classifier_encoded_picked, scores_raw_picked, scores_raw, scores, classifier_string, classifier_encoded, gen_classifier_encoded, gen_raw_scores, gen_beforeandafter]
+#         return classifier_bank, information 
+#     except Exception as error:
+#         print(error)
+#         return classifier_bank, None
+                        
+def evaluate_generation_and_log_pretrain(pretraining_file, information, img_batch, dict_of_generated_programs, iteration):
     [theprompt, newbest, scores_all, scores_all_picked, scores_picked, values_picked, scores_pos_generation,scores_mixed_generation,scores, programs] = information
     #We keep track of the maximum score in our prompt.
     best_prompt_score = torch.max(torch.tensor(scores_picked)).item()
@@ -607,7 +790,7 @@ def evaluate_classifier_bank(pretraining_file, information, img_batch, dict_of_g
     best_llm_score=scores[best_llm_index].item()
     scores_pos_best_bank_train, scores_mixed_best_bank_train = scores_all[best_llm_index][0],scores_all[best_llm_index][1]
 
-
+    #now lets also log the classifier's performance on the test set. 
     img_batch.to_test()
 
     attributes = extract_attributes_from_string(newbest)
@@ -639,8 +822,8 @@ def evaluate_classifier_bank(pretraining_file, information, img_batch, dict_of_g
     scores_test = torch.cat(list_of_test,dim=0)
     
     
-    iter = iter + 1
-    print("iter: ", iter)
+    iteration = iteration + 1
+    print("iteration: ", iteration)
 
     ####### LOGGING ########
     if not os.path.isdir(pretraining_file + "/program_bank"): 
@@ -649,85 +832,27 @@ def evaluate_classifier_bank(pretraining_file, information, img_batch, dict_of_g
         pickle.dump(dict_of_generated_programs, f)
 
     with open(pretraining_file + '/best_program.txt', 'a') as b:
-        b.write("iteration:  " + str(iter) + " best program: " + best_llm_program.replace("\n","") + " \n")
+        b.write("iteration:  " + str(iteration) + " best program: " + best_llm_program.replace("\n","") + " \n")
     with open(pretraining_file + '/prompts.txt', 'a') as t:
-        t.write("iteration: " + str(iter) + " prompt: " + theprompt + " \n" + "generation: " + newbest.replace("\n","") + "\n")
+        t.write("iteration: " + str(iteration) + " prompt: " + theprompt + " \n" + "generation: " + newbest.replace("\n","") + "\n")
     with open(pretraining_file +'/generations.txt', 'a') as c:
-        c.write("iteration: " + str(iter) + " generation: " + newbest.replace("\n","") + "\n")
+        c.write("iteration: " + str(iteration) + " generation: " + newbest.replace("\n","") + "\n")
     with open(pretraining_file + '/scores.txt', 'a') as s:
         #pdb.set_trace()
-        s.write("iteration: " + str(iter) + " generation: " + str(torch.mean(scores_pos_best_bank_train_old).item()) + "\n")
+        s.write("iteration: " + str(iteration) + " generation: " + str(torch.mean(scores_pos_best_bank_train_old).item()) + "\n")
     return dict_of_generated_programs
 
-def enhance_classifier_bank_jointtrain(classifier_bank, img_batch, openai_client, config, iteration):
-    scores = torch.tensor([x[-1] for x in classifier_bank])
-    scores_raw = torch.cat([x[-2][None] for x in classifier_bank],dim=0)
-    classifier_string = [x[0] for x in classifier_bank]
-    classifier_encoded = torch.cat([x[1][None] for x in classifier_bank],dim=0)
-
-    probabilities = torch.softmax(scores,dim=0)
-    indices = torch.multinomial(probabilities, config.number_of_classifiers_in_prompt, replacement=config.replacement)
-    
-    classifier_strings_picked = [classifier_string[i] for i in indices]
-    classifier_encoded_picked = classifier_encoded[indices] 
-    scores_picked = scores[indices].tolist()
-    scores_raw_picked = scores_raw[indices]
-
-    sorted_indices = sorted(range(len(scores_picked)), key=lambda i: scores_picked[i])
-
-    scores_picked = [scores_picked[i] for i in sorted_indices]
-    scores_raw_picked = scores_raw_picked[torch.tensor(sorted_indices)] 
-    classifier_strings_picked = [classifier_strings_picked[i] for i in sorted_indices]
-    classifier_encoded_picked = classifier_encoded_picked[torch.tensor(sorted_indices)]
-
-    try: 
-                
-        all_results=[]
-        all_futures=[]
-        list_of_prompts = []
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            for index in range(num_classes):
-                print("index: ", index)
-
-                theprompt = construct_prompt_jointtrain(classifier_strings_picked, index, iter)
-                #with open(jointtrain_file + '/prompts.txt', 'a') as t: t.write("iteration: " + str(iter) + "index: " + str(index) + " prompt: " + theprompt + " \n")
-                list_of_prompts.append(theprompt)
-            futures = [executor.submit(call_OpenSource, list_of_prompts[int(i/per_index_gen)], int(i/per_index_gen), client) for i in range(per_index_gen*num_classes)]
-            all_results = [future.result() for future in concurrent.futures.as_completed(futures)]
-
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            #for every time i call vllm, I have a best set. 
-            best_result_futures = [executor.submit(best, all_results[i][0],all_results[i][1],classifier_encoded_picked, classifier_strings_picked) for i in range(per_index_gen*num_classes)] #len(all_results)
-            best_results =  [future.result() for future in concurrent.futures.as_completed(best_result_futures)]
-        
-        for index in range(num_classes):
-
-            img_batch_joint.to_train()
-            filtered_bestresults = [x for x in best_results if x[0]]
-            index_bestresults = [x for x in filtered_bestresults if x[-1]==index]
-
-            try:
-                #Now we are taking the maximum across the batches generated per index
-                indexscores = [index_bestresults[i][0][0] for i in range(len(index_bestresults))]
-                bestforindex = indexscores.index(max(indexscores))
-                [gen_cross_entropy_score, gen_raw_scores], gen_classifier_encoded, gen_classifier_string, gen_beforeandafter, gen_index = index_bestresults[bestforindex]
-            except:
-                continue
-
-            classifier_bank.append([gen_classifier_string, gen_classifier_encoded, gen_raw_scores, gen_cross_entropy_score])
-    except Exception as error:
-        print(error)
-        continue
                         
 
-def enhance_classifier_bank(classifier_bank, img_batch, openai_client, config, iteration):
+def llm_mutate_pretrain(classifier_bank, img_batch, openai_client, config, iteration):
+    img_batch.to_train()
     scores_all = [[x[2],x[3]] for x in classifier_bank]
     scores_prompt = [get_meanlist_from_scores(x[2],x[3]) for x in classifier_bank]
     scores = torch.tensor([x[-1] for x in scores_prompt])
 
     programs = [x[0] for x in classifier_bank]
     probabilities = torch.softmax(scores,dim=0)
-    indices = torch.multinomial(probabilities, config.number_of_programs_in_prompt, replacement=config.replacement)
+    indices = torch.multinomial(probabilities, config.number_of_classifiers_in_prompt, replacement=config.replacement)
     
     values_picked = [programs[i] for i in indices]
     scores_picked = scores[indices].tolist()
@@ -746,10 +871,11 @@ def enhance_classifier_bank(classifier_bank, img_batch, openai_client, config, i
     theprompt = construct_prompt(values_picked, scores_prompt, iteration)
     
     #We ask LLM to run the prompt and create a new program. 
+    #pdb.set_trace()
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(call_OpenSource, theprompt, 0, openai_client) for _ in range(80)]
         results = [future.result() for future in concurrent.futures.as_completed(futures)]
-    
+    #pdb.set_trace()
     try: 
         list_of_scores = []
         list_of_pos_scores = []
@@ -774,7 +900,9 @@ def enhance_classifier_bank(classifier_bank, img_batch, openai_client, config, i
                         list_of_encoding.append(transformed_encodings)
                         list_of_scores.append(score)
                     
-                except:
+                except Exception as error:
+                    print(error, "1")
+                    #pdb.set_trace()
                     continue
         
         index = list_of_scores.index(max(list_of_scores))
@@ -784,14 +912,129 @@ def enhance_classifier_bank(classifier_bank, img_batch, openai_client, config, i
         #mean_list_generation = get_meanlist_from_scores(scores_pos_generation, scores_mixed_generation)
         classifier_bank.append([newbest, newbest_encoding, scores_pos_generation, scores_mixed_generation])
         information = [theprompt, newbest, scores_all, scores_all_picked, scores_picked, values_picked, scores_pos_generation,scores_mixed_generation,scores, programs]
-        return classifier_bank,  information
+        return classifier_bank, information
     
     except Exception as error:
-        print(error)
+        print(error, "2")
+        #pdb.set_trace()
         return classifier_bank, None 
 
+def llm_mutate_jointtrain(program_bank, num_classes, img_batch_joint, scientific_names, iteration, jointtrain_file, config, client):
+    scores = torch.tensor([x[-1] for x in program_bank])
+    scores_raw = torch.cat([x[-2][None] for x in program_bank], dim=0)
+    programs_string = [x[0] for x in program_bank]
+    programs_encoded = torch.cat([x[1][None] for x in program_bank], dim=0)
 
-def populate_bank(imgbatch, num_init_bank, allattributes, pretrain=False, num_classes=5):
+    probabilities = torch.softmax(scores, dim=0)
+    indices = torch.multinomial(probabilities, config.number_of_classifiers_in_prompt, replacement=config.replacement)
+    
+    programs_strings_picked = [programs_string[i] for i in indices]
+    programs_encoded_picked = programs_encoded[indices] 
+    scores_picked = scores[indices].tolist()
+    scores_raw_picked = scores_raw[indices]
+
+    sorted_indices = sorted(range(len(scores_picked)), key=lambda i: scores_picked[i])
+    scores_picked = [scores_picked[i] for i in sorted_indices]
+    scores_raw_picked = scores_raw_picked[torch.tensor(sorted_indices)]
+    programs_strings_picked = [programs_strings_picked[i] for i in sorted_indices]
+    programs_encoded_picked = programs_encoded_picked[torch.tensor(sorted_indices)]
+
+    # Get the best result per class
+    best_prompt_score_index = torch.argmax(torch.tensor(scores_picked))
+    best_prompt_program = programs_encoded_picked[best_prompt_score_index]
+
+    scores_crossentropy_bestprompt_train = scores_picked[best_prompt_score_index]
+    scores_raw_bestprompt_train = scores_raw_picked[best_prompt_score_index]
+
+    best_llm_index = torch.argmax(scores).item()
+    best_llm_program_string = programs_string[best_llm_index]
+    best_llm_program_encoded = programs_encoded[best_llm_index]
+
+    scores_crossentropy_bestbank_train = scores[best_llm_index].item()
+    scores_raw_bestbank_train = scores_raw[best_llm_index]
+    accuracy_train_best = get_accuracy(scores_raw_bestbank_train, img_batch_joint.classidx)
+
+    img_batch_joint.to_test()
+
+    scores_crossentropy_bestprompt_test, scores_raw_bestprompt_test = img_batch_joint.score(best_prompt_program)
+    scores_crossentropy_bestbank_test, scores_raw_bestbank_test = img_batch_joint.score(best_llm_program_encoded)
+    accuracy_test_best = get_accuracy(scores_raw_bestbank_test, img_batch_joint.classidx)
+
+    # Directly call the logging function
+    log_and_save_files(iteration, jointtrain_file, scores_raw_bestbank_train, scores_raw_bestprompt_train, scores_raw_bestbank_test, scores_raw_bestprompt_test, 
+    scores_crossentropy_bestbank_train, scores_crossentropy_bestbank_test, accuracy_train_best, accuracy_test_best, scientific_names, best_llm_program_string, num_classes)
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        list_of_prompts = []
+        for index in range(num_classes):
+            theprompt = construct_prompt_jointtrain(programs_strings_picked, index, iter)
+            list_of_prompts.append(theprompt)
+
+        futures = [executor.submit(call_OpenSource, list_of_prompts[int(i / config.per_index_gen)], int(i / config.per_index_gen), client) for i in range(config.per_index_gen * num_classes)]
+        all_results = [future.result() for future in concurrent.futures.as_completed(futures)]
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        #img_batch, result, index, programs_encoded_picked_cur_preclone, programs_strings_picked_cur_preclone
+        best_result_futures = [executor.submit(best, img_batch_joint, all_results[i][0], all_results[i][1], programs_encoded_picked, programs_strings_picked) for i in range(config.per_index_gen * num_classes)]
+        best_results = [future.result() for future in concurrent.futures.as_completed(best_result_futures)]
+
+    for index in range(num_classes):
+        img_batch_joint.to_train()
+        filtered_bestresults = [x for x in best_results if x[0]]
+        index_bestresults = [x for x in filtered_bestresults if x[-1] == index]
+
+        try:
+            indexscores = [index_bestresults[i][0][0] for i in range(len(index_bestresults))]
+            bestforindex = indexscores.index(max(indexscores))
+            [gen_cross_entropy_score, gen_raw_scores], gen_program_encoded, gen_program_string, gen_beforeandafter, gen_index = index_bestresults[bestforindex]
+        except:
+            continue
+
+        program_bank.append([gen_program_string, gen_program_encoded, gen_raw_scores, gen_cross_entropy_score])
+
+        if not os.path.isdir(jointtrain_file + "/program_bank"): 
+            os.mkdir(jointtrain_file + "/program_bank")
+        with open(jointtrain_file + "/program_bank/iter_" + str(iter) +  ".pkl", 'wb') as f:
+            pickle.dump(program_bank, f)
+
+        log_generations_and_append_to_bank(jointtrain_file, scientific_names, iteration, index, gen_raw_scores, gen_program_encoded, gen_beforeandafter, 
+        gen_cross_entropy_score, img_batch_joint)
+
+    return program_bank
+
+def log_generations_and_append_to_bank(jointtrain_file, scientific_names, iter, index, gen_raw_scores, gen_program_encoded, gen_beforeandafter, gen_cross_entropy_score, img_batch_joint):
+    
+    accuracy_train_gen = get_accuracy(gen_raw_scores, img_batch_joint.classidx)
+    np.save(jointtrain_file + "/scores_train/" + str(iter) +"_" +str(index)+ "_index.npy", img_batch_joint.classidx.detach().numpy())
+    np.save(jointtrain_file + "/scores_train/" + str(iter) +"_" +str(index) + "_raw_gen.npy", gen_raw_scores.detach().numpy())
+
+    img_batch_joint.to_test()
+
+    gen_cross_entropy_score_test, gen_raw_scores_test = img_batch_joint.score(gen_program_encoded)
+    accuracy_test_gen = get_accuracy(gen_raw_scores_test, img_batch_joint.classidx)
+    np.save(jointtrain_file + "/scores_test/" + str(iter) +"_" +str(index)+ "_index.npy", img_batch_joint.classidx.detach().numpy())
+    np.save(jointtrain_file + "/scores_test/" + str(iter) +"_" +str(index)+ "_raw_gen.npy", gen_raw_scores_test.detach().numpy())
+
+    with open(jointtrain_file +'/generations.txt', 'a') as c:
+        with open(jointtrain_file + '/scores_gen.txt', 'a') as q:
+            c.write("iteration: " + str(iter) + " index: " + scientific_names[index] + " generation: " + gen_beforeandafter + "\n")
+            q.write("iteration: " + str(iter) + " index: " + scientific_names[index] + " train cross-entropy: " + str(gen_cross_entropy_score) + " test cross-entropy: " + str(gen_cross_entropy_score_test) + " train accuracy: " + str(accuracy_train_gen) + " test accuracy: " + str(accuracy_test_gen) + "\n")
+    img_batch_joint.to_train()
+
+
+def log_and_save_files(iter, jointtrain_file, scores_raw_bestbank_train, scores_raw_bestprompt_train, scores_raw_bestbank_test, scores_raw_bestprompt_test, scores_crossentropy_bestbank_train, scores_crossentropy_bestbank_test, accuracy_train_best, accuracy_test_best, scientific_names, best_llm_program_string, num_classes):
+    np.save(jointtrain_file + "/scores_train/" + str(iter) + "_raw_bestbank.npy", scores_raw_bestbank_train.detach().numpy())
+    np.save(jointtrain_file + "/scores_train/" + str(iter) + "_raw_bestprompt.npy", scores_raw_bestprompt_train.detach().numpy())
+    np.save(jointtrain_file + "/scores_test/" + str(iter) + "_raw_bestbank.npy", scores_raw_bestbank_test.detach().numpy())
+    np.save(jointtrain_file + "/scores_test/" + str(iter) + "_raw_bestprompt.npy", scores_raw_bestprompt_test.detach().numpy())
+
+    with open(jointtrain_file + '/best_program.txt', 'a') as b:
+        with open(jointtrain_file + '/scores_best.txt', 'a') as s:
+            s.write("iteration: " + str(iter) + " train cross-entropy: " + str(scores_crossentropy_bestbank_train) + " test cross-entropy: " + str(scores_crossentropy_bestbank_test) + " train accuracy: " + str(accuracy_train_best) + " test accuracy: " + str(accuracy_test_best) + "\n")
+            perclass = "".join(["class " + scientific_names[i] + ": " + str(best_llm_program_string[i]) + "\n" for i in range(num_classes)])
+            b.write("iteration: " + str(iter) + " best program: \n" + perclass)
+
+def populate_classifier_bank(imgbatch, num_init_bank, allattributes, pretrain=False, num_classes=5):
    
     classifier_bank = []
 
@@ -841,7 +1084,10 @@ def load_data(path_to_imagenet_id, path_to_imagenet_decriptors, path_to_families
     with open(path_to_families, 'r') as f:
         families = json.load(f)
 
-    return id_dict, gpt_descriptions, families
+    totallist = [value for key,value in gpt_descriptions.items()]
+    allattributes = [escape_quotes(x) for xs in totallist for x in xs]
+
+    return id_dict, allattributes, families
 
 
 def load_imagenet_dicts():

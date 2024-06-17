@@ -74,7 +74,7 @@ def pretraining(openai_client,model,config):
     
 
     # Load description data and iNat dataset paths
-    id_dict, init_attributes, families = load_data('imagenet_label_to_wordnet_synset.txt', 'descriptors_imagenet.json', 'inaturalist_species.json')
+    id_dict, init_attributes, families = load_data('files/imagenet_label_to_wordnet_synset.txt', 'files/descriptors_imagenet.json', 'files/inaturalist_species.json')
     scientific_names = families[config.synset]["classes"]
 
     # Initialize ImageBatch for handling image operations
@@ -106,6 +106,7 @@ def pretraining(openai_client,model,config):
         pretraining_file = create_folder_and_log_exp_details(expname, config.llm_type, config.scoring,config.append_class,config.objective,scientific_names[i], config.batch_size)
 
         for iteration in range(config.max_iter):
+            pdb.set_trace()
             dict_of_generated_programs, classifier_bank = process_iteration(iteration, None, len(scientific_names), pretraining_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=True)
 
             if iteration == config.max_iter - 1:
