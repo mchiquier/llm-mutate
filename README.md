@@ -71,6 +71,9 @@ python src/llm-mutate.py
 
 ## Inference
 
+```
+python src/inference.py
+```
 
 ## Citation
 
