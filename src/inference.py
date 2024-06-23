@@ -87,7 +87,6 @@ if __name__ == "__main__":
     thedescs_discovered = families[config.synset]["desc"]
 
     for x, y in inatdl:
-        print("here")
         x = x.to(device)
         y = y.to(device)
         imgbatch.reinit_images_test(x,y)
