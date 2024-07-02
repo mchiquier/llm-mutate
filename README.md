@@ -67,9 +67,6 @@ KikiBouba_v2: https://drive.google.com/file/d/17ibF3tzFiZrMb9ZnpYlLEh-xmWkPJpNH/
 
 Remember to update the `dataset_path` in the `config.py` file.
 
-## Configuration
-
-
 ## Running LLM-Mutate on iNaturalist
 
 Running this will automatically launch both pre-training and joint-training. See paper for explanation of this. 
@@ -79,7 +76,7 @@ python src/llm-mutate.py
 
 ## Inference
 
-Specify what experiment you'd like to evaluate in the `config.py` file in the `experiment` attribute. You can pick from: `zero_shot`, `clip_scientific`, `clip_common`, `cbd_scientific`, `cbd_common`, `ours`.
+Specify what experiment you'd like to evaluate in the `config.py` file in the `experiment` attribute. You can pick from: `zero_shot`, `clip_scientific`, `clip_common`, `cbd_scientific`, `cbd_common`, `ours`. Note that for the KikiBouba datasets there is no difference between `scientific` and `common` as there is only one class name per class. 
 ```
 python src/inference.py
 ```
