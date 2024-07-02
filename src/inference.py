@@ -26,16 +26,14 @@ def evaluate_llm_mutate(synset_ids, thedescs_discovered, imgbatch):
         desfeats = []
         with torch.no_grad():
             for i in range(len(synset_ids)):
-            
                 if mode== "cbd+template":
-                    descs_iter = thedescs_discovered[i]#load_gpt_descriptions('', thedescs[i])
+                    descs_iter = thedescs_discovered[i]
                     descs = []  
                     for desc in descs_iter:
-                        #print(desc)
                         descs.extend([t.format(desc) for t in imagenet_templates])
-
                 else:
                     descs= thedescs_discovered[i] 
+
                 desfeatcur = imgbatch.encode(descs).T
                 desfeats.append(desfeatcur)
 
@@ -44,32 +42,31 @@ def evaluate_llm_mutate(synset_ids, thedescs_discovered, imgbatch):
             topnmatrix = np.zeros((len(synset_ids), 2))
             topn = 2
             with torch.no_grad():
-                #img_enc(x).image_embeds
                 imgbatch.to_test()
-                #pdb.set_trace()
                 clsscores = []
+
                 for i,desfeat in enumerate(desfeats):
-
                     _, scores = imgbatch.score(desfeat)
-
                     clsscores.append(torch.mean(scores,dim=1))
-                    #pdb.set_trace()
+
                 clsscores = torch.stack(clsscores).T
                 pred = torch.argmax(clsscores, dim=1)
                 topk = torch.topk(clsscores, topn, dim=1)[1]
                 y=imgbatch.classidx
                 intopk = torch.sum(topk==y.unsqueeze(dim=-1), dim=1)
+
                 for t, p, top in zip(y, pred, intopk):
                     clsmatrix[t, p]+=1
                     if top>0.5:
                         topnmatrix[t, 0]+=1
                     else:
                         topnmatrix[t, 1]+=1
+
                 acc = np.trace(clsmatrix)/np.sum(clsmatrix)
                 macc = np.nanmean(np.diag(clsmatrix)/np.sum(clsmatrix, axis=1))
                 topkmacc = np.nanmean((topnmatrix[:, 0])/np.sum(topnmatrix, axis=1))
                 topkacc = np.sum(topnmatrix[:, 0])/np.sum(topnmatrix)
-            print("discovered attributes", mode, np.round(acc*100, 2), np.round(macc*100, 2), np.round(topkacc*100, 2), np.round(topkmacc*100, 2))
+            print("accuracies (acc, macc, topkmacc, topkacc): ", mode, np.round(acc*100, 2), np.round(macc*100, 2), np.round(topkacc*100, 2), np.round(topkmacc*100, 2))
 
 if __name__ == "__main__":
     config = Config()

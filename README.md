@@ -26,7 +26,6 @@ echo YOUR_OPENAI_API_KEY_HERE > api.key
 1. Clone this repository with its submodules.
 2. Install the dependencies. See the see [Dependencies](#Dependencies).
 3. Download two pretrained models (the rest are downloaded automatically). See [Pretrained models](#Pretrained-models).
-4. Set up the OpenAI key. See [OpenAI key](#OpenAI-key).
 
 ### Cloning this Repo
 
