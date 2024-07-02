@@ -51,8 +51,13 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         dataloader = load_datasets_jointtrain(config.dataset_path, config.synset_ids, config.batch_size)
     else:
         transform = transforms.Compose([transforms.Resize(224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])])
-        kiki_dataset = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
-        dataloader = DataLoader(kiki_dataset, batch_size=len(kiki_dataset), shuffle=False, drop_last=False, pin_memory=True, num_workers=32)
+        kiki_dataset_train = datasets.ImageFolder(root=config.dataset_path+"train", transform=transform)
+        dataloader_train = DataLoader(kiki_dataset_train, batch_size=config.batch_size, shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
+        kiki_dataset_test = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+        dataloader_test = DataLoader(kiki_dataset_train, batch_size=len(kiki_dataset_val), shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
+        dataloader = {}
+        dataloader['train'] = kiki_dataset_train
+        dataloader['test'] = kiki_dataset_test
 
     dict_of_generated_programs={}
     
