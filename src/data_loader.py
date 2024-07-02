@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
-from inat_dataloader_refactor import INatDataset, INatDatasetJoint
+from datasets import INatDataset, INatDatasetJoint
 import pdb
 
 def load_datasets_pretrain(dataset_path, main_class, rest_classes, batch_size, transform=None):
@@ -99,7 +99,7 @@ def load_datasets_jointtrain(dataset_path, cindset, batch_size, experiment, tran
         test_loader = DataLoader(test_dataset, batch_size=len(test_dataset), shuffle=False, num_workers=4)
 
         return {'train': train_loader, 'test': test_loader, 'descs': descs}
-        
+
     except Exception as e:
         print(f"Failed to load datasets: {e}")
         return None
