@@ -44,7 +44,7 @@ bash setup_env.sh
 conda activate llmmutate
 ```
 
-#### vLLM
+### vLLM
 
 Launch a server that hosts the LLM with vLLM.
 ```
