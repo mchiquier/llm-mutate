@@ -69,7 +69,7 @@ Remember to update the `dataset_path` in the `config.py` file.
 
 ## Running LLM-Mutate on iNaturalist
 
-Running this will automatically launch both pre-training and joint-training. See paper for explanation of this. 
+Running this will automatically launch both pre-training and joint-training on the iNaturalist dataset for the `Lichen` synset. To change the synset, modify the config file. See paper for explanation of pretraining/joint training. 
 ```
 python src/llm-mutate.py
 ```

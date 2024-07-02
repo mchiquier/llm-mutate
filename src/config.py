@@ -6,7 +6,7 @@ class Config:
         # Model related configurations
         self.scoring = 'clip'  # could be 'clip', 'xvlm', etc.
         self.max_iter = 600
-        self.experiment = 'zero_shot' #choose from ['zero_shot', 'clip_scientific', 'clip_common', 'cbd_scientific', 'cbd_common', 'ours']
+        self.experiment = 'ours' #choose from ['zero_shot', 'clip_scientific', 'clip_common', 'cbd_scientific', 'cbd_common', 'ours']
         self.classifiers_initialized = 1000
         self.number_of_classifiers_in_prompt = 10
         self.batch_size = 2000
@@ -14,7 +14,7 @@ class Config:
         self.replacement = False
         self.random_scores_order = False
         self.synset = 'Lichen' 
-        self.dataset_name = 'KikiBouba_v2' #'iNaturalist'
+        self.dataset_name = 'iNaturalist' #'KikiBouba_v2' #
         self.objective = 'binarymean'
         self.append_class = False
         self.pretraining_path = None #'results/binaryclassifier_iNaturalist_Lichen_10prompt/llama_clip_classapp_False_objective_binarymean_bs_2000/'
@@ -25,8 +25,8 @@ class Config:
         self.api_key = os.getenv('OPENAI_API_KEY', 'default_api_key')
 
         # Dataset specific configurations
-        #self.dataset_path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
-        self.dataset_path = '/proj/vondrick4/mia/kiki_bouba_v2_split/'
+        self.dataset_path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
+        #self.dataset_path = '/proj/vondrick4/mia/kiki_bouba_v2_split/'
          
         # Image transformation settings
         self.image_size = 224  # default size, can be overridden by model settings
