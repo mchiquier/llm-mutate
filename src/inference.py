@@ -120,24 +120,26 @@ if __name__ == "__main__":
                         ['origami', 'a palace', 'a sorting system', 'snow-covered', 'grassy area', 'revolving circular platform'],
                         ['groovy colorful background', 'psychedelic colors', 'holographic', 'shimmering', 'iridescent colors', 'colorful patterns']        ]
             else:
+                descs = None 
                 print("Error with config.dataset_name value")
-                break
                 
         else:
+            descs = None 
             print("Error with config.experiment value")
-            break
 
         synset_ids = [i for i in range(len(descs))]
 
-    device="cuda:5"
+    if descs:
 
-    model, preprocess = clip.load("ViT-B/32", device=device, jit=False) 
-    imgbatch = ImageBatchJoint(model,224,'clip')
+        device="cuda:5"
+
+        model, preprocess = clip.load("ViT-B/32", device=device, jit=False) 
+        imgbatch = ImageBatchJoint(model,224,'clip')
 
 
-    for x, y in inatdl:
-        x = x.to(device)
-        y = y.to(device)
-        imgbatch.reinit_images_test(x,y)
+        for x, y in inatdl:
+            x = x.to(device)
+            y = y.to(device)
+            imgbatch.reinit_images_test(x,y)
 
-    evaluate_llm_mutate(synset_ids, descs, imgbatch)
+        evaluate_llm_mutate(synset_ids, descs, imgbatch)
