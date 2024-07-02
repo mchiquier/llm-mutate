@@ -58,7 +58,7 @@ python -m vllm.entrypoints.openai.api_server --model meta-llama/Llama-2-70b-chat
 ## Datasets
 
 Download the iNaturalist dataset (specifically, 'train' and 'validation') from : https://github.com/visipedia/inat_comp/tree/master/2021 
-Update the path to the parent folder of train and val in "config.py" : self.dataset_path = YOUR_PATH.
+Update the path to the parent folder of train and val in `config.py` : self.dataset_path = YOUR_PATH.
 
 ## Configuration
 
@@ -71,7 +71,7 @@ python src/llm-mutate.py
 
 ## Inference
 
-Specify what experiment you'd like to evaluate in the config.py file in the 'experiment' attribute. You can pick from: 'zero_shot', 'clip_scientific', 'clip_common', 'cbd_scientific', 'cbd_common', 'ours'.
+Specify what experiment you'd like to evaluate in the `config.py` file in the `experiment` attribute. You can pick from: `zero_shot`, `clip_scientific`, `clip_common`, `cbd_scientific`, `cbd_common`, `ours`.
 ```
 python src/inference.py
 ```
