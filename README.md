@@ -25,7 +25,7 @@ echo YOUR_OPENAI_API_KEY_HERE > api.key
 ## Detailed Installation
 1. Clone this repository with its submodules.
 2. Install the dependencies. See the see [Dependencies](#Dependencies).
-3. Download two pretrained models (the rest are downloaded automatically). See [Pretrained models](#Pretrained-models).
+3. Install vLLM. See [vLLM](#vLLM).
 
 ### Cloning this Repo
 
@@ -43,9 +43,6 @@ export PATH=/usr/local/cuda/bin:$PATH
 bash setup_env.sh
 conda activate llmmutate
 ```
-
-### Pretrained models
-
 
 #### vLLM
 
