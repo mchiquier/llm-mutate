@@ -65,6 +65,8 @@ Download the two KikiBouba datasets here:
 KikiBouba_v1: https://drive.google.com/file/d/1-a4FRS9N1DLf3_YIYq8150zN1uilapft/view?usp=sharing
 KikiBouba_v2: https://drive.google.com/file/d/17ibF3tzFiZrMb9ZnpYlLEh-xmWkPJpNH/view?usp=sharing
 
+Remember to update the `dataset_path` in the `config.py` file.
+
 ## Configuration
 
 
