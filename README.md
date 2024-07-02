@@ -65,6 +65,7 @@ Update the path to the parent folder of train and val in `config.py` : self.data
 
 ## Running LLM-Mutate on iNaturalist
 
+Running this will automatically launch both pre-training and joint-training. See paper for explanation of this. 
 ```
 python src/llm-mutate.py
 ```
