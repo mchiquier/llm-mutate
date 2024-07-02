@@ -15,7 +15,7 @@ After cloning:
 ```bash
 cd llm-mutate
 export PATH=/usr/local/cuda/bin:$PATH
-bash setup.sh  # This may take a while. Make sure the vipergpt environment is active
+bash setup.sh  # This may take a while. Make sure the llm-mutate environment is active
 cd GLIP
 python setup.py clean --all build develop --user
 cd ..
