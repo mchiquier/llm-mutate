@@ -60,6 +60,11 @@ python -m vllm.entrypoints.openai.api_server --model meta-llama/Llama-2-70b-chat
 Download the iNaturalist dataset (specifically, 'train' and 'validation') from : https://github.com/visipedia/inat_comp/tree/master/2021 
 Update the path to the parent folder of train and val in `config.py` : self.dataset_path = YOUR_PATH.
 
+Download the two KikiBouba datasets here:
+
+KikiBouba_v1: https://drive.google.com/file/d/1-a4FRS9N1DLf3_YIYq8150zN1uilapft/view?usp=sharing
+KikiBouba_v2: https://drive.google.com/file/d/17ibF3tzFiZrMb9ZnpYlLEh-xmWkPJpNH/view?usp=sharing
+
 ## Configuration
 
 
