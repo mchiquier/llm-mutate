@@ -47,15 +47,21 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         new_attributes = [x for x in words if "newfun" not in x and len(x) > 5] 
         joint_train_init_attributes.append(new_attributes)
 
-    inat_dataloader = load_datasets_jointtrain(config.dataset_path, config.synset_ids, config.batch_size)
+    if config.dataset_name=='iNaturalist':
+        dataloader = load_datasets_jointtrain(config.dataset_path, config.synset_ids, config.batch_size)
+    else:
+        transform = transforms.Compose([transforms.Resize(224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])])
+        kiki_dataset = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+        dataloader = DataLoader(kiki_dataset, batch_size=len(kiki_dataset), shuffle=False, drop_last=False, pin_memory=True, num_workers=32)
+
     dict_of_generated_programs={}
     
     #Let's pre-encode the entire dataset for both the training set and the test set as a single batch (this fits into memory since we never use gradients)
-    for pos_images, class_idx in inat_dataloader['train']:
+    for pos_images, class_idx in dataloader['train']:
         img_batch.reinit_images_jointtrain(pos_images, class_idx, train=True)
         img_batch.to_train()
 
-    for images,class_idx in inat_dataloader['test']:
+    for images,class_idx in dataloader['test']:
         img_batch.reinit_images_jointtrain(images,class_idx,train=False)
 
     classifier_bank = populate_classifier_bank(img_batch, config.classifiers_initialized, joint_train_init_attributes, pretrain=False, num_classes=len(list_of_pretraining_files))
