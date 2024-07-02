@@ -46,8 +46,8 @@ conda activate llmmutate
 
 ### vLLM
 
-Launch a server that hosts the LLM with vLLM.
-```
+Launch a server that hosts the LLM with vLLM in a tmux.
+``` 
 python -m vllm.entrypoints.openai.api_server --model meta-llama/Llama-2-70b-chat-hf --tensor-parallel-size 8 --chat-template ./examples/template_chatml.jinja --trust-remote-code
 ```
 
