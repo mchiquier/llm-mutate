@@ -77,18 +77,22 @@ if __name__ == "__main__":
     with open('files/inaturalist_species.json', 'r') as f:
         families = json.load(f)
     synset_ids = families[config.synset]["ids"]
-    inat_dataloader = load_datasets_jointtrain(config.dataset_path, synset_ids, config.batch_size)
+    inat_dataloader = load_datasets_jointtrain(config.dataset_path, synset_ids, config.batch_size, config.experiment)
     inatdl = inat_dataloader['test']
+    if config.experiment != "ours":
+        descs = inat_dataloader['descs']
+    else:
+        descs = families[config.synset]["desc"]
 
     device="cuda:5"
 
     model, preprocess = clip.load("ViT-B/32", device=device, jit=False) 
     imgbatch = ImageBatchJoint(model,224,'clip')
-    thedescs_discovered = families[config.synset]["desc"]
+
 
     for x, y in inatdl:
         x = x.to(device)
         y = y.to(device)
         imgbatch.reinit_images_test(x,y)
 
-    evaluate_llm_mutate(synset_ids, thedescs_discovered, imgbatch)
+    evaluate_llm_mutate(synset_ids, descs, imgbatch)

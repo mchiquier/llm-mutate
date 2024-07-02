@@ -6,13 +6,14 @@ class Config:
         # Model related configurations
         self.scoring = 'clip'  # could be 'clip', 'xvlm', etc.
         self.max_iter = 600
+        self.experiment = 'zero_shot' #choose from ['zero_shot', 'clip_scientific', 'clip_common', 'cbd_scientific', 'cbd_common', 'ours']
         self.classifiers_initialized = 1000
         self.number_of_classifiers_in_prompt = 10
         self.batch_size = 2000
         self.llm_type = 'llama'  # could be 'gpt-3', 'codex', 'llama'
         self.replacement = False
         self.random_scores_order = False
-        self.synset = 'Manzanita'
+        self.synset = 'Lichen' 
         self.dataset_name = 'iNaturalist'
         self.objective = 'binarymean'
         self.append_class = False
