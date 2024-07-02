@@ -14,7 +14,7 @@ class Config:
         self.replacement = False
         self.random_scores_order = False
         self.synset = 'Lichen' 
-        self.dataset_name = 'iNaturalist'
+        self.dataset_name = 'KikiBouba_v2' #'iNaturalist'
         self.objective = 'binarymean'
         self.append_class = False
         self.pretraining_path = None #'results/binaryclassifier_iNaturalist_Lichen_10prompt/llama_clip_classapp_False_objective_binarymean_bs_2000/'
@@ -25,7 +25,8 @@ class Config:
         self.api_key = os.getenv('OPENAI_API_KEY', 'default_api_key')
 
         # Dataset specific configurations
-        self.dataset_path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
+        #self.dataset_path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
+        self.dataset_path = '/proj/vondrick4/mia/kiki_bouba_v2_split/'
          
         # Image transformation settings
         self.image_size = 224  # default size, can be overridden by model settings

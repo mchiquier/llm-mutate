@@ -16,9 +16,9 @@ import pdb
 import clip
 from utilities import load_data, imagenet_templates
 from config import Config
-from data_loader import load_datasets_jointtrain
+from data_loader import load_datasets_jointtrain, make_descriptor_sentence, load_gpt_descriptions
 from image_batch import ImageBatchJoint
-
+from torchvision import datasets, transforms
 
 
 def evaluate_llm_mutate(synset_ids, thedescs_discovered, imgbatch):
@@ -77,12 +77,57 @@ if __name__ == "__main__":
     with open('files/inaturalist_species.json', 'r') as f:
         families = json.load(f)
     synset_ids = families[config.synset]["ids"]
-    inat_dataloader = load_datasets_jointtrain(config.dataset_path, synset_ids, config.batch_size, config.experiment)
-    inatdl = inat_dataloader['test']
-    if config.experiment != "ours":
-        descs = inat_dataloader['descs']
+
+    if config.dataset_name=='iNaturalist':
+
+        inat_dataloader = load_datasets_jointtrain(config.dataset_path, synset_ids, config.batch_size, config.experiment)
+        inatdl = inat_dataloader['test']
+
+        if config.experiment != "ours":
+            descs = inat_dataloader['descs']
+        else:
+            descs = families[config.synset]["desc"]
+
     else:
-        descs = families[config.synset]["desc"]
+        transform = transforms.Compose([transforms.Resize(224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])])
+        kiki_dataset = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+        inatdl = DataLoader(kiki_dataset, batch_size=len(kiki_dataset), shuffle=False, drop_last=False, pin_memory=True, num_workers=32)
+        json_file_path = config.dataset_path + 'kiki_bouba.json'
+        classes = list(kiki_dataset.class_to_idx.keys())
+
+        # Open the JSON file and load the data into a dictionary
+        with open(json_file_path) as json_file:
+            cbd_data = json.load(json_file)
+
+        if 'cbd' in config.experiment:
+            descs_only = [value for key,value in cbd_data.items()]
+            descs = [load_gpt_descriptions(classes[i], descs_only[i]) for i in range(len(descs_only))]
+        elif 'zero_shot' in config.experiment:
+            descs = [value for key,value in cbd_data.items()]
+        elif 'clip' in config.experiment:
+            descs = [[class_name] for class_name in classes]
+        elif config.experiment == "ours":
+            if config.dataset_name=='KikiBouba_v1':
+                descs=[[' twisting trunk', ' long, sloping branches', ' dense, dark green foliage', '  sharp, thorn-like leaf tips', ' coppery-red or dark purple bark', ' tiny, cream-colored flowers'],
+                ['minimalist Isometric cityscape surreal futuristic tech Triforce lego'],
+                ['a blue-skinned, 8-armed deity with a glowing third eye, standing on a lotus flower, surrounded by a halo of loving-kindness, under a rainbow, with a chorus of singing cherubs and a harp in the background, while holding a crystal orb and spreading blessings to all beings'],
+                ['sections of shimmering, glowing citrus fruits', 'sections of iridescent, shimmering peacock feathers', 'a series of colorful, wavy shapes resembling a coral reef', 'sections of luminous, glowing mushrooms', 'a delicate, lacy pattern made of glistening, dew-covered spider webs', 'sections of soft, fluffy clouds'],
+                ['two small, circular shapes with thin black outlines', 'F-15 written in red on the tail']]
+            elif config.dataset_name=='KikiBouba_v2':
+                descs=[['a glow-in-the-dark bowling ball', 'a mini bowling ball', 'a bowling ball with different colored holes', 'a bowling ball with a face', 'a bowling ball with a variety of different textures', 'a bowling ball that is surrounded by 3 ghostly bowling balls'],
+                        ['flying wing aircraft', 'delta wing aircraft', 'swing-wing aircraft', 'variable geometry wing aircraft', 'rotorcraft', 'tiltrotor aircraft'],
+                        ['two long, curved tusks', 'a fluffy tail', 'a bone, decorative comb', 'a sharp-tipped, flexible hunting knife', 'a tough, animal hide pouch', 'a beaded, leather cord'],
+                        ['origami', 'a palace', 'a sorting system', 'snow-covered', 'grassy area', 'revolving circular platform'],
+                        ['groovy colorful background', 'psychedelic colors', 'holographic', 'shimmering', 'iridescent colors', 'colorful patterns']        ]
+            else:
+                print("Error with config.dataset_name value")
+                break
+                
+        else:
+            print("Error with config.experiment value")
+            break
+
+        synset_ids = [i for i in range(len(descs))]
 
     device="cuda:5"
 
