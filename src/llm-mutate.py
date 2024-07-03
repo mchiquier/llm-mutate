@@ -4,6 +4,7 @@ from environment_setup import initialize_model, initialize_llm
 from utilities import *
 from image_batch import ImageBatch
 from data_loader import load_datasets_pretrain, load_datasets_jointtrain
+from torchvision import datasets, transforms
 
 animal_classes = ['00403_Animalia_Arthropoda_Insecta_Coleoptera_Scarabaeidae_Trypoxylus_dichotomus',
                                         '03127_Animalia_Chordata_Aves_Accipitriformes_Accipitridae_Buteo_jamaicensis',
@@ -19,10 +20,13 @@ def main():
     
     
     # Perform pre-training, or load in pre-training from previous run 
-    if config.pretraining_path==None:
-        list_of_pretraining_files = pretraining(openai_client,model,config)
+    if config.dataset_name=='iNaturalist':
+        if config.pretraining_path==None:
+            list_of_pretraining_files = pretraining(openai_client,model,config)
+        else:
+            list_of_pretraining_files = [x + config.pretraining_path + "/experiment0/" for x in os.listdir(config.pretraining_path)]
     else:
-        list_of_pretraining_files = [x + config.pretraining_path + "/experiment0/" for x in os.listdir(config.pretraining_path)]
+        list_of_pretraining_files = ['files/cbd_descriptors.json']
     
     jointtrain_file = joint_training(openai_client, model, config, list_of_pretraining_files)
     print("Final results in: ", jointtrain_file)
@@ -39,13 +43,22 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
     # Load init attributes from pretraining
     joint_train_init_attributes = []
     
-    for classname in list_of_pretraining_files:
-        pretraining_file = classname 
-        with open(pretraining_file + "/generations.txt", 'r') as f:
-            text = f.read()
-        words = re.findall(r"'([^']*)'", text)
-        new_attributes = [x for x in words if "newfun" not in x and len(x) > 5] 
-        joint_train_init_attributes.append(new_attributes)
+    if config.dataset_name=='iNaturalist':
+        for classname in list_of_pretraining_files:
+            pretraining_file = classname 
+            with open(pretraining_file + "/generations.txt", 'r') as f:
+                text = f.read()
+            words = re.findall(r"'([^']*)'", text)
+            new_attributes = [x for x in words if "newfun" not in x and len(x) > 5] 
+            joint_train_init_attributes.append(new_attributes)
+    else:
+        with open(list_of_pretraining_files[0], 'r') as file:
+            gpt_descriptions = json.load(file)
+            totallist = [value for key,value in gpt_descriptions.items()]
+            allattributes = [escape_quotes(x) for xs in totallist for x in xs]
+            for i in range(5):
+                joint_train_init_attributes.append(allattributes)
+
 
     if config.dataset_name=='iNaturalist':
         dataloader = load_datasets_jointtrain(config.dataset_path, config.synset_ids, config.batch_size)
@@ -54,10 +67,10 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         kiki_dataset_train = datasets.ImageFolder(root=config.dataset_path+"train", transform=transform)
         dataloader_train = DataLoader(kiki_dataset_train, batch_size=config.batch_size, shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
         kiki_dataset_test = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
-        dataloader_test = DataLoader(kiki_dataset_train, batch_size=len(kiki_dataset_val), shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
+        dataloader_test = DataLoader(kiki_dataset_test, batch_size=len(kiki_dataset_test), shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
         dataloader = {}
-        dataloader['train'] = kiki_dataset_train
-        dataloader['test'] = kiki_dataset_test
+        dataloader['train'] = dataloader_train
+        dataloader['test'] = dataloader_test
 
     dict_of_generated_programs={}
     
@@ -70,8 +83,8 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         img_batch.reinit_images_jointtrain(images,class_idx,train=False)
 
     classifier_bank = populate_classifier_bank(img_batch, config.classifiers_initialized, joint_train_init_attributes, pretrain=False, num_classes=len(list_of_pretraining_files))
-    
     num_classes = len(list_of_pretraining_files)
+    
     for iteration in range(config.max_iter):
         dict_of_generated_programs, classifier_bank = process_iteration(iteration, list_of_pretraining_files, num_classes, jointtrain_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=False)
         if iteration == config.max_iter - 1:
