@@ -920,6 +920,9 @@ def llm_mutate_pretrain(classifier_bank, img_batch, openai_client, config, itera
         return classifier_bank, None 
 
 def llm_mutate_jointtrain(program_bank, num_classes, img_batch_joint, scientific_names, iteration, jointtrain_file, config, client):
+
+    img_batch_joint.to_train()
+
     scores = torch.tensor([x[-1] for x in program_bank])
     scores_raw = torch.cat([x[-2][None] for x in program_bank], dim=0)
     programs_string = [x[0] for x in program_bank]

@@ -7,25 +7,25 @@ class Config:
         self.scoring = 'clip'  # could be 'clip', 'xvlm', etc.
         self.max_iter = 600
         self.experiment = 'ours' #choose from ['zero_shot', 'clip_scientific', 'clip_common', 'cbd_scientific', 'cbd_common', 'ours']
-        self.classifiers_initialized = 30 #1000
+        self.classifiers_initialized = 1000 
         self.number_of_classifiers_in_prompt = 10
         self.batch_size = 2000
         self.llm_type = 'llama'  # could be 'gpt-3', 'codex', 'llama'
         self.replacement = False
         self.random_scores_order = False
         self.synset = 'Lichen' 
-        self.dataset_name = 'iNaturalist' #'iNaturalist' #'KikiBouba_v2' #
+        self.dataset_name = 'Art' #'iNaturalist', 'KikiBouba_v2', 'KikiBouba_v1'
         self.objective = 'binarymean'
         self.append_class = False
         self.pretraining_path = None #'results/binaryclassifier_iNaturalist_Lichen_10prompt/llama_clip_classapp_False_objective_binarymean_bs_2000/'
         #self.synset_ids = set([5438,5439,5440,5441,5442,5443])
-        self.per_index_gen = 1
+        self.per_index_gen = 10
 
         # API credentials
         self.api_key = os.getenv('OPENAI_API_KEY', 'default_api_key')
 
         # Dataset specific configurations
-        self.dataset_path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
+        self.dataset_path = '/proj/vondrick4/mia/painters_v0/'#'/proj/vondrick2/utkarsh/datasets/iNat2021/'
         #self.dataset_path = '/proj/vondrick4/mia/kiki_bouba_v2_split/'
          
         # Image transformation settings

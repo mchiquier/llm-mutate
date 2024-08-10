@@ -5,6 +5,7 @@ from utilities import *
 from image_batch import ImageBatch
 from data_loader import load_datasets_pretrain, load_datasets_jointtrain
 from torchvision import datasets, transforms
+from torch.utils.data import Subset
 
 animal_classes = ['00403_Animalia_Arthropoda_Insecta_Coleoptera_Scarabaeidae_Trypoxylus_dichotomus',
                                         '03127_Animalia_Chordata_Aves_Accipitriformes_Accipitridae_Buteo_jamaicensis',
@@ -64,9 +65,39 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         dataloader = load_datasets_jointtrain(config.dataset_path, config.synset_ids, config.batch_size)
     else:
         transform = transforms.Compose([transforms.Resize(224), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])])
-        kiki_dataset_train = datasets.ImageFolder(root=config.dataset_path+"train", transform=transform)
+        #kiki_dataset_train = datasets.ImageFolder(root=config.dataset_path+"train", transform=transform)
+        #kiki_dataset_test = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+        # Get the full dataset
+        full_dataset = datasets.ImageFolder(root=config.dataset_path+"train", transform=transform)
+        # Get the class folders
+        class_folders = os.listdir(config.dataset_path+"val")
+        # Sort the folders to ensure consistent ordering
+        class_folders.sort()
+        # Select only the first 5 folders
+        selected_classes = class_folders[:5]
+
+        # Create a list of indices for samples in the selected classes
+        selected_indices = [i for i, (path, label) in enumerate(full_dataset.samples)
+                            if full_dataset.classes[label] in selected_classes]
+        # Create a subset of the dataset with only the selected indices
+        kiki_dataset_train = Subset(full_dataset, selected_indices)
         dataloader_train = DataLoader(kiki_dataset_train, batch_size=config.batch_size, shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
-        kiki_dataset_test = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+
+
+        full_dataset = datasets.ImageFolder(root=config.dataset_path+"val", transform=transform)
+        # Get the class folders
+        class_folders = os.listdir(config.dataset_path+"val")
+        # Sort the folders to ensure consistent ordering
+        class_folders.sort()
+        # Select only the first 5 folders
+        selected_classes = class_folders[:5]
+
+        # Create a list of indices for samples in the selected classes
+        selected_indices = [i for i, (path, label) in enumerate(full_dataset.samples)
+                            if full_dataset.classes[label] in selected_classes]
+        # Create a subset of the dataset with only the selected indices
+        kiki_dataset_test = Subset(full_dataset, selected_indices)
+
         dataloader_test = DataLoader(kiki_dataset_test, batch_size=len(kiki_dataset_test), shuffle=True, drop_last=False, pin_memory=True, num_workers=32)
         dataloader = {}
         dataloader['train'] = dataloader_train
@@ -82,11 +113,11 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
     for images,class_idx in dataloader['test']:
         img_batch.reinit_images_jointtrain(images,class_idx,train=False)
 
-    classifier_bank = populate_classifier_bank(img_batch, config.classifiers_initialized, joint_train_init_attributes, pretrain=False, num_classes=len(list_of_pretraining_files))
-    num_classes = len(list_of_pretraining_files)
+    classifier_bank = populate_classifier_bank(img_batch, config.classifiers_initialized, joint_train_init_attributes, pretrain=False, num_classes=len(joint_train_init_attributes))
+    num_classes = len(joint_train_init_attributes)
     
     for iteration in range(config.max_iter):
-        dict_of_generated_programs, classifier_bank = process_iteration(iteration, list_of_pretraining_files, num_classes, jointtrain_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=False)
+        dict_of_generated_programs, classifier_bank = process_iteration(iteration, [str(x) for x in range(num_classes)], num_classes, jointtrain_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=False)
         if iteration == config.max_iter - 1:
             print("Reached the maximum number of iterations.")
             break

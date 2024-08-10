@@ -3,7 +3,7 @@ from PIL import Image
 import torchvision.transforms as transforms
 import clip
 import torch
-
+import pdb
 
 def scoring_function(new_fn,img_batch):
 
@@ -121,6 +121,7 @@ class ImageBatch:
             with torch.no_grad():
                 clsscores = (self.img_encoding @ attr_encodings)/self.temp
                 cross_entropy_loss = torch.nn.CrossEntropyLoss()
+                #pdb.set_trace()
                 cross_entropy_score = cross_entropy_loss(torch.mean(clsscores,dim=2).T, self.classidx).item()
         
                 #return accuracy
