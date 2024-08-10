@@ -74,6 +74,7 @@ python src/llm-mutate.py
 
 All you need to do to run LLM-Mutate on your dataset is update the dataset path in the config.py file and also make sure that this path points to a folder that has the following folder structure. 
 
+```
 dataset-root/
 │
 ├── train/
@@ -85,6 +86,7 @@ dataset-root/
 │   ├── class 1/
 │   │   ├── img1.png 
 │   │   ├── img2.png 
+```
 
 NOTE: Make sure to set `do_pretraining=True` if you'd like to do employ pre-training (useful if your dataset is fine-grained classification), otherwise, the default of `do_pretraining=False` is fine.
 
