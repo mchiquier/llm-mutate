@@ -20,7 +20,7 @@ bash setup.sh  # This may take a while. Make sure the llm-mutate environment is 
 
 ## Detailed Installation
 1. Clone this repository with its submodules.
-2. Install the dependencies. See the see [Dependencies](#Dependencies).
+2. Install the dependencies. See [Dependencies](#Dependencies).
 3. Install vLLM. See [vLLM](#vLLM).
 
 ### Cloning this Repo
