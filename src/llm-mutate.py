@@ -21,7 +21,7 @@ def main():
     
     
     # Perform pre-training, or load in pre-training from previous run 
-    if config.dataset_name=='iNaturalist':
+    if config.do_pretraining:
         if config.pretraining_path==None:
             list_of_pretraining_files = pretraining(openai_client,model,config)
         else:

@@ -17,6 +17,7 @@ class Config:
         self.dataset_name = 'Art' #'iNaturalist', 'KikiBouba_v2', 'KikiBouba_v1'
         self.objective = 'binarymean'
         self.append_class = False
+        self.do_pretraining = False
         self.pretraining_path = None #'results/binaryclassifier_iNaturalist_Lichen_10prompt/llama_clip_classapp_False_objective_binarymean_bs_2000/'
         #self.synset_ids = set([5438,5439,5440,5441,5442,5443])
         self.per_index_gen = 10
