@@ -16,10 +16,6 @@ After cloning:
 cd llm-mutate
 export PATH=/usr/local/cuda/bin:$PATH
 bash setup.sh  # This may take a while. Make sure the llm-mutate environment is active
-cd GLIP
-python setup.py clean --all build develop --user
-cd ..
-echo YOUR_OPENAI_API_KEY_HERE > api.key
 ```
 
 ## Detailed Installation
