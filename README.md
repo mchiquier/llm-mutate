@@ -70,6 +70,28 @@ Running this will automatically launch both pre-training and joint-training on t
 python src/llm-mutate.py
 ```
 
+## Running LLM-Mutate on YOUR dataset!
+
+All you need to do to run LLM-Mutate on your dataset is update the dataset path in the config.py file and also make sure that this path points to a folder that has the following folder structure. 
+
+dataset-root/
+│
+├── train/
+│   ├── class 1/
+│   │   ├── img1.png 
+│   │   ├── img2.png 
+...
+├── val/
+│   ├── class 1/
+│   │   ├── img1.png 
+│   │   ├── img2.png 
+
+NOTE: Make sure to set `do_pretraining=True` if you'd like to do employ pre-training (useful if your dataset is fine-grained classification), otherwise, the default of `do_pretraining=False` is fine.
+
+```
+python src/llm-mutate.py
+```
+
 ## Inference
 
 Specify what experiment you'd like to evaluate in the `config.py` file in the `experiment` attribute. You can pick from: `zero_shot`, `clip_scientific`, `clip_common`, `cbd_scientific`, `cbd_common`, `ours`. Note that for the KikiBouba datasets there is no difference between `scientific` and `common` as there is only one class name per class. 
