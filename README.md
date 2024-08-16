@@ -84,7 +84,7 @@ dataset-root/
 │   │   ├── img2.png 
 ```
 
-NOTE: Make sure to set `do_pretraining=True` if you'd like to do employ pre-training (useful if your dataset is fine-grained classification), otherwise, the default of `do_pretraining=False` is fine.
+NOTE: By default, we only run on the first 5 classes in your folder structure for time efficiency. If you'd like to change this, modify the `num_classes` attribute in `config.py`.
 
 ```
 python src/llm-mutate.py
