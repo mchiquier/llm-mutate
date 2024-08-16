@@ -1,5 +1,6 @@
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
+import torchvision.datasets as datasets
 from os.path import join
 import json
 from PIL import Image
@@ -13,8 +14,64 @@ from scipy.spatial import distance_matrix
 import csv
 import random
 import pdb
+import logging
 
 path = '/proj/vondrick2/utkarsh/datasets/iNat2021/'
+
+class PretrainDataset(Dataset):
+    def __init__(self, root, pos_class, split='train', transform=None):
+        self.pos_class = pos_class
+        self.mode = split
+        self.transform = transform
+        self.root = root
+
+        self.pos_images = []
+        self.neg_images = []
+        self.neg_labels = []
+
+        # Set up logging
+        logging.basicConfig(filename='dataset_errors.log', level=logging.ERROR)
+
+        self.load_dataset()
+
+    def load_dataset(self):
+        dataset_path = os.path.join(self.root, self.mode)
+        #pdb.set_trace()
+        for i,class_name in enumerate(os.listdir(dataset_path)[:5]):
+            #pdb.set_trace()
+            print(i,5)
+            class_path = os.path.join(dataset_path, class_name)
+            if not os.path.isdir(class_path):
+                pdb.set_trace()
+                continue
+            
+            label = int(i == self.pos_class)
+            #pdb.set_trace()
+            for img_name in os.listdir(class_path):
+                img_path = os.path.join(class_path, img_name)
+                try:
+                    with Image.open(img_path) as img:
+                        img = img.convert('RGB')
+                    if self.transform:
+                        img = self.transform(img)
+                    
+                    if label == 1:
+                        self.pos_images.append((img, label))
+                    else:
+                        self.neg_images.append((img, label))
+                        #self.neg_labels.append(int(class_name))
+                except Exception as e:
+                    logging.error(f"Error loading image {img_path}: {str(e)}")
+    def __len__(self):
+        return len(self.pos_images)
+
+    
+    def __getitem__(self, idx):
+        pos_img, pos_label = self.pos_images[idx]
+        neg_idx = random.randint(0, len(self.neg_images)-1)
+        neg_img, neg_label = self.neg_images[neg_idx]
+        
+        return pos_img, neg_img
 
 class INatDataset(Dataset):
     def __init__(self, root_dir, split, main_class, rest_classes, transform=None):
@@ -28,11 +85,7 @@ class INatDataset(Dataset):
         with open(self.metafile) as ifd:
             self.metadata = json.load(ifd)
 
-        
         self.images_rest = [tmp for tmp in self.metadata['images'] if tmp['file_name'].split("/")[1] in self.rest_classes]
-
-        
-
         new_order = np.arange(0,len(self.images_rest)).tolist()
         random.shuffle(new_order)
         

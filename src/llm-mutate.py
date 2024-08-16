@@ -35,7 +35,7 @@ def main():
 
 def joint_training(openai_client, model, config, list_of_pretraining_files):
 
-    expname = 'jointtrain_after_binaryclassifier_' + str(config.number_of_classifiers_in_prompt) + "_exinprompt"
+    expname = 'jointtrain_after_binaryclassifier_' + str(config.number_of_classifiers_in_prompt) + "_exinprompt_wikiart"
     jointtrain_file=create_folder_and_log_exp_details(expname, config.llm_type, config.scoring,config.append_class,config.objective,config.synset, config.batch_size)
 
     # Initialize ImageBatch for handling image operations
@@ -44,21 +44,21 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
     # Load init attributes from pretraining
     joint_train_init_attributes = []
     
-    if config.dataset_name=='iNaturalist':
-        for classname in list_of_pretraining_files:
-            pretraining_file = classname 
-            with open(pretraining_file + "/generations.txt", 'r') as f:
-                text = f.read()
-            words = re.findall(r"'([^']*)'", text)
-            new_attributes = [x for x in words if "newfun" not in x and len(x) > 5] 
-            joint_train_init_attributes.append(new_attributes)
-    else:
-        with open(list_of_pretraining_files[0], 'r') as file:
-            gpt_descriptions = json.load(file)
-            totallist = [value for key,value in gpt_descriptions.items()]
-            allattributes = [escape_quotes(x) for xs in totallist for x in xs]
-            for i in range(5):
-                joint_train_init_attributes.append(allattributes)
+    # if config.dataset_name=='iNaturalist':
+    for classname in list_of_pretraining_files:
+        pretraining_file = classname 
+        with open(pretraining_file + "/generations.txt", 'r') as f:
+            text = f.read()
+        words = re.findall(r"'([^']*)'", text)
+        new_attributes = [x for x in words if "newfun" not in x and len(x) > 5] 
+        joint_train_init_attributes.append(new_attributes)
+    # else:
+    #     with open(list_of_pretraining_files[0] , 'r') as file:
+    #         gpt_descriptions = json.load(file)
+    #         totallist = [value for key,value in gpt_descriptions.items()]
+    #         allattributes = [escape_quotes(x) for xs in totallist for x in xs]
+    #         for i in range(5):
+    #             joint_train_init_attributes.append(allattributes)
 
 
     if config.dataset_name=='iNaturalist':
@@ -74,7 +74,7 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
         # Sort the folders to ensure consistent ordering
         class_folders.sort()
         # Select only the first 5 folders
-        selected_classes = class_folders[:5]
+        selected_classes = class_folders[:config.num_classes]
 
         # Create a list of indices for samples in the selected classes
         selected_indices = [i for i, (path, label) in enumerate(full_dataset.samples)
@@ -127,10 +127,9 @@ def joint_training(openai_client, model, config, list_of_pretraining_files):
 def pretraining(openai_client,model,config):
 
     
-
     # Load description data and iNat dataset paths
     id_dict, init_attributes, families = load_data('files/imagenet_label_to_wordnet_synset.txt', 'files/descriptors_imagenet.json', 'files/inaturalist_species.json')
-    scientific_names = families[config.synset]["classes"]
+    scientific_names =  [str(x) for x in  np.arange(0,config.num_classes).tolist()] #families[config.synset]["classes"]
 
     # Initialize ImageBatch for handling image operations
     img_batch = ImageBatch(model, scientific_names, config.hparams['image_size'], config.scoring, pretrain=True)
@@ -140,15 +139,19 @@ def pretraining(openai_client,model,config):
         
     for i in range(0,len(scientific_names)):
 
-        scientific_names = families[config.synset]["classes"]
         main_class = [scientific_names[i]]
         scientific_names_duplicate = scientific_names.copy()
         scientific_names_duplicate.remove(scientific_names[i])
         rest_classes = animal_classes + scientific_names_duplicate
-        inat_dataloader = load_datasets_pretrain(config.dataset_path, main_class, rest_classes, config.batch_size, transform=None)
+
+        if config.dataset_name=='iNaturalist':
+            inat_dataloader = load_datasets_pretrain(config.dataset_name,config.dataset_path, main_class, rest_classes, config.batch_size, transform=None)
+        else:
+            inat_dataloader = load_datasets_pretrain(config.dataset_name,config.dataset_path, i, None, config.batch_size, transform=None)
         
         dict_of_generated_programs={}
 
+        
         #Let's pre-encode the entire dataset for both the training set and the test set as a single batch (this fits into memory since we never use gradients)
         for pos_images, neg_images in inat_dataloader['train']:
             img_batch.reinit_images_pretrain(pos_images, neg_images, train=True)
@@ -159,11 +162,12 @@ def pretraining(openai_client,model,config):
 
         classifier_bank = populate_classifier_bank(img_batch, config.classifiers_initialized, init_attributes, pretrain=True)
         pretraining_file = create_folder_and_log_exp_details(expname, config.llm_type, config.scoring,config.append_class,config.objective,scientific_names[i], config.batch_size)
+        #pdb.set_trace()
 
-        for iteration in range(config.max_iter):
+        for iteration in range(config.max_iter_pretraining):
             dict_of_generated_programs, classifier_bank = process_iteration(iteration, None, len(scientific_names), pretraining_file, config, classifier_bank, img_batch, openai_client, dict_of_generated_programs, pretrain=True)
 
-            if iteration == config.max_iter - 1:
+            if iteration == config.max_iter_pretraining - 1:
                 print("Reached the maximum number of iterations.")
                 break
 

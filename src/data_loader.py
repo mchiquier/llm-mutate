@@ -1,9 +1,9 @@
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
-from datasets import INatDataset, INatDatasetJoint
+from datasets import INatDataset, INatDatasetJoint, PretrainDataset
 import pdb
 
-def load_datasets_pretrain(dataset_path, main_class, rest_classes, batch_size, transform=None):
+def load_datasets_pretrain(dataset_name, dataset_path, main_class, rest_classes, batch_size, transform=None):
     """
     Loads datasets and returns PyTorch data loaders for training and testing.
 
@@ -25,19 +25,24 @@ def load_datasets_pretrain(dataset_path, main_class, rest_classes, batch_size, t
             ])
 
     try:
-        # Loading the image datasets from the specified path
-        train_dataset = INatDataset(dataset_path, split='train', main_class=main_class, rest_classes=rest_classes, transform=transform)
-        test_dataset =  INatDataset(dataset_path, split='val', main_class=main_class, rest_classes=rest_classes, transform=transform)
+        if dataset_name=='iNaturalist':
+            # Loading the image datasets from the specified path
+            train_dataset = INatDataset(dataset_path, split='train', main_class=main_class, rest_classes=rest_classes, transform=transform)
+            test_dataset =  INatDataset(dataset_path, split='val', main_class=main_class, rest_classes=rest_classes, transform=transform)
+        else:
+            test_dataset = PretrainDataset(dataset_path, split='val', pos_class=main_class,  transform=transform)
+            train_dataset = PretrainDataset(dataset_path, split='train', pos_class=main_class,  transform=transform)
+            
 
         # Creating data loaders for both datasets
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4)
         test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4)
-        #pdb.set_trace()
 
         return {'train': train_loader, 'test': test_loader}
     except Exception as e:
         print(f"Failed to load datasets: {e}")
         return None
+
 
 def make_descriptor_sentence(descriptor):
     if descriptor.startswith('a') or descriptor.startswith('an'):
