@@ -196,7 +196,7 @@ def call_GPT4(theprompt, client):
 #     pdb.set_trace()
     
 #     return completion.choices[0].text
-OPENAI_API_KEY="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"
+OPENAI_API_KEY=""
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {OPENAI_API_KEY}"
